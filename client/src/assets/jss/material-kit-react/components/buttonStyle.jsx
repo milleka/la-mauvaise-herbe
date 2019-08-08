@@ -37,7 +37,6 @@ const buttonStyle = {
     borderRadius: "3px",
     position: "relative",
     padding: "12px 30px",
-    margin: ".3125rem 1px",
     fontSize: "12px",
     fontWeight: "400",
     textTransform: "uppercase",
