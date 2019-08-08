@@ -1,30 +1,15 @@
-/*!
-
-=========================================================
-* Material Kit React - v1.7.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/material-kit-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-/*eslint-disable*/
 import React from "react";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
 // nodejs library that concatenates classes
 import classNames from "classnames";
-import { List, ListItem, withStyles } from "@material-ui/core";
+import { withStyles } from "@material-ui/core";
+import Button from "components/CustomButtons/Button.jsx";
 
 // @material-ui/icons
-import Favorite from "@material-ui/icons/Favorite";
+import { Link } from "react-router-dom";
+
+// @material-ui/core components
 
 import footerStyle from "assets/jss/material-kit-react/components/footerStyle.jsx";
 
@@ -34,64 +19,52 @@ function Footer({ ...props }) {
     [classes.footer]: true,
     [classes.footerWhiteFont]: whiteFont
   });
-  const aClasses = classNames({
-    [classes.a]: true,
-    [classes.footerWhiteFont]: whiteFont
-  });
+  
   return (
     <footer className={footerClasses}>
-      <div className={classes.container}>
+      <div className={classes.bloc}>
         <div className={classes.left}>
-          <List className={classes.list}>
-            <ListItem className={classes.inlineBlock}>
-              <a
-                href="https://www.creative-tim.com/?ref=mkr-footer"
-                className={classes.block}
-                target="_blank"
-              >
-                Creative Tim
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a
-                href="https://www.creative-tim.com/presentation?ref=mkr-footer"
-                className={classes.block}
-                target="_blank"
-              >
-                About us
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a
-                href="http://blog.creative-tim.com/?ref=mkr-footer"
-                className={classes.block}
-                target="_blank"
-              >
-                Blog
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a
-                href="https://www.creative-tim.com/license?ref=mkr-footer"
-                className={classes.block}
-                target="_blank"
-              >
-                Licenses
-              </a>
-            </ListItem>
-          </List>
+          <h4 className={classes.titre}>Liens utiles</h4>
+          <Button
+            href="https://fr.wikipedia.org/wiki/Plante_m%C3%A9dicinale"
+            target="_blank"
+            color="transparent"
+          >
+          <p className={classes.NavLink}>Les plantes Médicinales</p>
+          </Button>
+          <Button
+            href="https://www.maine-et-loire.fr/actualites/toutes-les-actualites/news/les-mauvaises-herbes-ca-nexiste-pas"
+            target="_blank"
+            color="transparent"
+          >
+          <p className={classes.NavLink}>Article sur La mauvaise Herbe</p>
+          </Button>
+          <Button
+            href="https://fetedelanature.com/"
+            target="_blank"
+            color="transparent"
+          >
+          <p className={classes.NavLink}>Fête de la nature</p>
+          </Button>
         </div>
         <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made with{" "}
-          <Favorite className={classes.icon} /> by{" "}
-          <a
-            href="https://www.creative-tim.com?ref=mkr-footer"
-            className={aClasses}
+          <div className={classes.espace}>
+          <Button
+            justIcon
+            href="https://www.facebook.com/lamauvaiseherbe49"
             target="_blank"
+            color="transparent"
           >
-            Creative Tim
-          </a>{" "}
-          for a better web.
+            <i
+              className={classes.socialIcons + " fab fa-facebook"}
+            />
+          </Button>
+          </div>
+          <Button target="_blank" color="transparent" className={classes.mention}>
+            <Link className={classes.NavLink} to="/mentions">
+              Mentions légales
+            </Link>
+          </Button>
         </div>
       </div>
     </footer>
