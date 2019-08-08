@@ -29,6 +29,7 @@ import HeaderLinks from "components/Header/HeaderLinks.jsx";
 //import SectionLogin from "./Sections/SectionLogin.jsx";
 //import SectionExamples from "./Sections/SectionExamples.jsx";
 //import SectionDownload from "./Sections/SectionDownload.jsx";
+import SectionKesako from "./Sections/SectionKesako.jsx";
 
 import logo from 'assets/img/lamauvaiseherbe.png';
 
@@ -68,6 +69,7 @@ class PageAccueil extends React.Component {
         </Parallax>
 
         <div className={classNames(classes.main, classes.mainRaised)}>
+          <SectionKesako />
           {/*<SectionBasics />
           <SectionNavbars />
           <SectionTabs />
