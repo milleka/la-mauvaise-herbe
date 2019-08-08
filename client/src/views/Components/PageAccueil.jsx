@@ -32,6 +32,7 @@ import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import SectionKesako from "./Sections/SectionKesako.jsx";
 import SectionEvent from "./Sections/SectionEvent.jsx";
 import SectionActivites from "./Sections/SectionActivites.jsx";
+import SectionContact from "./Sections/SectionContact.jsx";
 
 import logo from 'assets/img/lamauvaiseherbe.png';
 
@@ -96,6 +97,7 @@ class PageAccueil extends React.Component {
           <br/>
           <br/>
         </div>
+        <SectionContact/>
         <Footer />
       </div>
     );
