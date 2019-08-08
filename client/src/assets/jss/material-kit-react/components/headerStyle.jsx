@@ -34,8 +34,7 @@ const headerStyle = {
     display: "flex",
     border: "0",
     borderRadius: "3px",
-    padding: "0.625rem 0",
-    marginBottom: "20px",
+    paddingTop: "0.625rem",
     color: "#555",
     width: "100%",
     backgroundColor: "#fff",
@@ -78,9 +77,9 @@ const headerStyle = {
     padding: "8px 16px",
     letterSpacing: "unset",
     "&:hover,&:focus": {
-      color: "inherit",
-      background: "transparent"
-    }
+      color: "transparent",
+      background: "rgba(200, 200, 200, 0.2)"
+    },
   },
   appResponsive: {
     margin: "20px 10px"
@@ -124,7 +123,6 @@ const headerStyle = {
   transparent: {
     backgroundColor: "transparent !important",
     boxShadow: "none",
-    paddingTop: "25px",
     color: "#FFFFFF"
   },
   dark: {

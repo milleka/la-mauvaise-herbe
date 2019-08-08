@@ -1,27 +1,10 @@
-/*!
-
-=========================================================
-* Material Kit React - v1.7.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/material-kit-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // react components for routing our app without refresh
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 // @material-ui/icons
@@ -30,32 +13,35 @@ import Header from "components/Header/Header.jsx";
 import Footer from "components/Footer/Footer.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
-import Button from "components/CustomButtons/Button.jsx";
+//import Button from "components/CustomButtons/Button.jsx";
 import Parallax from "components/Parallax/Parallax.jsx";
 // sections for this page
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
-import SectionBasics from "./Sections/SectionBasics.jsx";
-import SectionNavbars from "./Sections/SectionNavbars.jsx";
-import SectionTabs from "./Sections/SectionTabs.jsx";
-import SectionPills from "./Sections/SectionPills.jsx";
-import SectionNotifications from "./Sections/SectionNotifications.jsx";
-import SectionTypography from "./Sections/SectionTypography.jsx";
-import SectionJavascript from "./Sections/SectionJavascript.jsx";
-import SectionCarousel from "./Sections/SectionCarousel.jsx";
-import SectionCompletedExamples from "./Sections/SectionCompletedExamples.jsx";
-import SectionLogin from "./Sections/SectionLogin.jsx";
-import SectionExamples from "./Sections/SectionExamples.jsx";
-import SectionDownload from "./Sections/SectionDownload.jsx";
+//import SectionBasics from "./Sections/SectionBasics.jsx";
+//import SectionNavbars from "./Sections/SectionNavbars.jsx";
+//import SectionTabs from "./Sections/SectionTabs.jsx";
+//import SectionPills from "./Sections/SectionPills.jsx";
+//import SectionNotifications from "./Sections/SectionNotifications.jsx";
+//import SectionTypography from "./Sections/SectionTypography.jsx";
+//import SectionJavascript from "./Sections/SectionJavascript.jsx";
+//import SectionCarousel from "./Sections/SectionCarousel.jsx";
+//import SectionCompletedExamples from "./Sections/SectionCompletedExamples.jsx";
+//import SectionLogin from "./Sections/SectionLogin.jsx";
+//import SectionExamples from "./Sections/SectionExamples.jsx";
+//import SectionDownload from "./Sections/SectionDownload.jsx";
 
-import componentsStyle from "assets/jss/material-kit-react/views/components.jsx";
+import logo from 'assets/img/lamauvaiseherbe.png';
 
-class Components extends React.Component {
+import pageAccueilStyle from "assets/jss/material-kit-react/views/pageAccueilStyle.jsx";
+
+
+class PageAccueil extends React.Component {
   render() {
     const { classes, ...rest } = this.props;
     return (
       <div>
         <Header
-          brand="Material Kit React"
+          brand={logo}
           rightLinks={<HeaderLinks />}
           fixed
           color="transparent"
@@ -65,15 +51,16 @@ class Components extends React.Component {
           }}
           {...rest}
         />
-        <Parallax image={require("assets/img/bg4.jpg")}>
+        <Parallax image={require("assets/img/les_plantes_medicinales.jpg")}>
           <div className={classes.container}>
             <GridContainer>
               <GridItem>
                 <div className={classes.brand}>
-                  <h1 className={classes.title}>Material Kit React.</h1>
-                  <h3 className={classes.subtitle}>
-                    A Badass Material-UI Kit based on Material Design.
-                  </h3>
+                  <h1 className={classes.tit}>
+                      <div className={classes.titles}>La</div>
+                      <div className={classes.title}>Mauvaise</div>
+                      <div className={classes.titles}>Herbe</div>
+                  </h1>
                 </div>
               </GridItem>
             </GridContainer>
@@ -81,7 +68,7 @@ class Components extends React.Component {
         </Parallax>
 
         <div className={classNames(classes.main, classes.mainRaised)}>
-          <SectionBasics />
+          {/*<SectionBasics />
           <SectionNavbars />
           <SectionTabs />
           <SectionPills />
@@ -99,7 +86,9 @@ class Components extends React.Component {
             </Link>
           </GridItem>
           <SectionExamples />
-          <SectionDownload />
+          <SectionDownload />*/}
+          <br/>
+          <br/>
         </div>
         <Footer />
       </div>
@@ -107,8 +96,8 @@ class Components extends React.Component {
   }
 }
 
-Components.propTypes = {
+PageAccueil.propTypes = {
   classes: PropTypes.object
 };
 
-export default withStyles(componentsStyle)(Components);
+export default withStyles(pageAccueilStyle)(PageAccueil);
