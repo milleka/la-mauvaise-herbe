@@ -31,6 +31,7 @@ import HeaderLinks from "components/Header/HeaderLinks.jsx";
 //import SectionDownload from "./Sections/SectionDownload.jsx";
 import SectionKesako from "./Sections/SectionKesako.jsx";
 import SectionEvent from "./Sections/SectionEvent.jsx";
+import SectionActivites from "./Sections/SectionActivites.jsx";
 
 import logo from 'assets/img/lamauvaiseherbe.png';
 
@@ -45,7 +46,7 @@ class PageAccueil extends React.Component {
         <Header
           brand={logo}
           rightLinks={<HeaderLinks />}
-          fixed
+          absolute
           color="transparent"
           changeColorOnScroll={{
             height: 400,
@@ -72,6 +73,7 @@ class PageAccueil extends React.Component {
         <div className={classNames(classes.main, classes.mainRaised)}>
           <SectionKesako />
           <SectionEvent/>
+          <SectionActivites/>
           {/*<SectionBasics />
           <SectionNavbars />
           <SectionTabs />
