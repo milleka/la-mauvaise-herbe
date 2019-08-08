@@ -37,5 +37,5 @@ app.use(function (req, res, next) {
 
 
 //Définition et mise en place du port d'écoute
-var port = 8001;
+var port = 8000;
 app.listen(port, () => console.log(`Listening on port ${port}`));
