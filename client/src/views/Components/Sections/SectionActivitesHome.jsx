@@ -8,7 +8,7 @@ import Button from "components/CustomButtons/Button.jsx";
 // @material-ui/icons
 // core components
 // sections for this page
-import activitesStyle from "assets/jss/material-kit-react/views/componentsSections/activitesStyle.jsx";
+import activitesStyle from "assets/jss/material-kit-react/views/componentsSections/activitesHomeStyle.jsx";
 
 class Activites extends React.Component {
   render() {
