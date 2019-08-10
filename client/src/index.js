@@ -28,13 +28,15 @@ import LandingPage from "views/LandingPage/LandingPage.jsx";
 import ProfilePage from "views/ProfilePage/ProfilePage.jsx";
 import LoginPage from "views/LoginPage/LoginPage.jsx";
 import Activités from "views/LesActivites/LesActivites.jsx";
+import Actualités from "views/Actualités/Actualités.jsx";
 
 var hist = createBrowserHistory();
 
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
-    <Route path="/activités" component={Activités}/>
+      <Route path="/activités" component={Activités}/>
+      <Route path="/actualités" component={Actualités}/>
       <Route path="/landing-page" component={LandingPage} />
       <Route path="/profile-page" component={ProfilePage} />
       <Route path="/login-page" component={LoginPage} />
