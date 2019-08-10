@@ -30,7 +30,10 @@ const reservationStyles = {
     lineHeight: "1.428571429",
     fontWeight: "400",
     paddingLeft: "0",
-    letterSpacing: "normal"
+    letterSpacing: "normal",
+  },
+  date: {
+    color: "green",
   },
   ...tooltipsStyle,
   ...popoverStyles

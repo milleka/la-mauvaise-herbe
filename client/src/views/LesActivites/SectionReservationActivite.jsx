@@ -19,6 +19,7 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import People from "@material-ui/icons/Person";
 import Personne from '@material-ui/icons/PersonOutline';
 import Email from '@material-ui/icons/Email';
+import Datetime from "react-datetime";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="down" ref={ref} {...props} />;
@@ -26,7 +27,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   
   Transition.displayName = "Transition";
 
-class SectionReservation extends React.Component {
+class SectionReservationActiv extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -81,7 +82,7 @@ class SectionReservation extends React.Component {
                     >
                         <Close className={classes.modalClose} />
                     </IconButton>
-                    <h4 className={classes.modalTitle}>Réserver pour l'événement !</h4>
+                    <h4 className={classes.modalTitle}>Demande de réservation !</h4>
                 </DialogTitle>
                 <DialogContent
                     id="classic-modal-slide-description"
@@ -101,7 +102,7 @@ class SectionReservation extends React.Component {
                       )
                     }}
                   />
-                    <CustomInput
+                  <CustomInput
                     labelText="Prénom"
                     id="material"
                     formControlProps={{
@@ -115,7 +116,11 @@ class SectionReservation extends React.Component {
                       )
                     }}
                   />
-                    <CustomInput
+                  <Datetime
+                    inputProps={{ placeholder: "Date et heure"
+                    }}
+                  />
+                  <CustomInput
                     labelText="Email"
                     id="material"
                     formControlProps={{
@@ -141,8 +146,8 @@ class SectionReservation extends React.Component {
     }
 }
 
-SectionReservation.propTypes = {
+SectionReservationActiv.propTypes = {
     classes: PropTypes.object
   };
   
-  export default withStyles(reservationStyle)(SectionReservation);
+  export default withStyles(reservationStyle)(SectionReservationActiv);

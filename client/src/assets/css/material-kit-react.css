@@ -108,11 +108,11 @@ legend {
     outline: 0; }
 
 a {
-  color: #9c27b0;
+  color: rgb(0, 77, 0);
   text-decoration: none;
   background-color: transparent; }
   a:hover, a:focus {
-    color: #89229b;
+    color: rgb(0, 77, 0);
     text-decoration: none; }
 
 label {
@@ -227,7 +227,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
   cursor: pointer;
   border-radius: 100%;
   transition: all 0.2s ease-out;
-  border: 1px solid #9c27b0;
+  border: 1px solid rgb(0, 77, 0);
   background: #fff;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); }
 
@@ -245,7 +245,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
   cursor: pointer;
   border-radius: 100%;
   transition: all 0.2s ease-out;
-  border: 1px solid #9c27b0;
+  border: 1px solid rgb(0, 77, 0);
   background: #fff;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); }
 
@@ -425,10 +425,10 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   border: 1px solid #333; }
 
 .noUi-target.slider-primary .noUi-connect, .noUi-target.slider-primary.noUi-connect {
-  background-color: #9c27b0; }
+  background-color: rgb(0, 77, 0); }
 
 .noUi-target.slider-primary .noUi-handle {
-  border-color: #9c27b0; }
+  border-color: rgb(0, 77, 0); }
 
 .noUi-target.slider-info .noUi-connect, .noUi-target.slider-info.noUi-connect {
   background-color: #00bcd4; }
@@ -463,8 +463,6 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 /*!
 * https://github.com/YouCanBookMe/react-datetime
 */
-.rdt {
-  position: relative; }
   .rdt .rdtPicker {
     -webkit-transition: all 150ms linear;
     -moz-transition: all 150ms linear;
@@ -481,7 +479,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     margin-top: 0; }
   .rdt input.form-control {
     border: 0;
-    background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#d2d2d2, #d2d2d2);
+    background-image: linear-gradient(rgb(0, 77, 0), rgb(0, 77, 0)), linear-gradient(#d2d2d2, #d2d2d2);
     background-size: 0 2px, 100% 1px;
     background-repeat: no-repeat;
     background-position: center bottom, center calc(100% - 1px);
@@ -503,7 +501,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     color: #555; }
   .rdt input.form-control:focus {
     outline: none;
-    background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#d2d2d2, #d2d2d2);
+    background-image: linear-gradient(rgb(0, 77, 0), rgb(0, 77, 0)), linear-gradient(#d2d2d2, #d2d2d2);
     background-size: 100% 2px, 100% 1px;
     box-shadow: none;
     transition-duration: 0.3s; }
@@ -580,7 +578,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   padding: 0px;
   border-radius: 50%; }
   .rdtDay.rdtToday.rdtActive, .rdtDay.rdtActive, .rdtDay.rdtActive:hover {
-    background-color: #9c27b0 !important;
+    background-color:rgb(0, 77, 0) !important;
     color: #fff;
     box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(156, 39, 176, 0.6); }
 
@@ -631,6 +629,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   border-bottom: none; }
 
 .rdtPicker th.rdtSwitch {
+  color: rgb(0, 77, 0);
   width: 50px;
   padding: 5px;
   border-radius: 4px; }
@@ -642,12 +641,6 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   border-radius: 50%;
   line-height: 33px; }
 
-.rdtPicker .dow,
-.rdtPicker th.rdtSwitch,
-.rdtPicker th.rdtNext,
-.rdtPicker th.rdtPrev,
-.rdtPicker .rdtTimeToggle {
-  color: #9c27b0; }
 
 .rdtPrev span,
 .rdtNext span {
@@ -723,9 +716,9 @@ td.rdtYear:hover {
     border: 1px solid transparent; }
 
 .rdtCounters .rdtCounter:last-child .rdtCount {
-  color: #9c27b0;
+  color: rgb(0, 77, 0);
   border-radius: 50%;
-  border: 1px solid #9c27b0; }
+  border: 1px solid rgb(0, 77, 0); }
 
 .rdtCounterSeparator {
   padding: 7px;
@@ -791,7 +784,7 @@ td.rdtYear:hover {
     .rdtMonths .rdtYear.rdtActive,
     .rdtYears .rdtMonth.rdtActive,
     .rdtYears .rdtYear.rdtActive {
-      background-color: #9c27b0 !important;
+      background-color: rgb(0, 77, 0) !important;
       color: #fff; }
 
 /* Slider */
