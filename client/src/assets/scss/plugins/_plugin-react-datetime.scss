@@ -2,7 +2,6 @@
 * https://github.com/YouCanBookMe/react-datetime
 */
 .rdt {
-  position: relative;
   .rdtPicker {
     -webkit-transition: all 150ms linear;
     -moz-transition: all 150ms linear;
@@ -47,7 +46,7 @@
   }
   input.form-control:focus {
     outline: none;
-    background-image: linear-gradient(#9c27b0, #9c27b0),
+    background-image: linear-gradient(rgb(0, 77, 0), rgb(0, 77, 0)),
       linear-gradient(#d2d2d2, #d2d2d2);
     background-size: 100% 2px, 100% 1px;
     box-shadow: none;
@@ -134,7 +133,7 @@
   &.rdtToday.rdtActive,
   &.rdtActive,
   &.rdtActive:hover {
-    background-color: $brand-primary !important;
+    background-color: rgb(0, 77, 0) !important;
     color: $white-color;
     @include shadow-big-color($brand-primary);
   }
@@ -204,15 +203,6 @@
   line-height: 33px;
 }
 
-.rdtPicker {
-  .dow,
-  th.rdtSwitch,
-  th.rdtNext,
-  th.rdtPrev,
-  .rdtTimeToggle {
-    color: $brand-primary;
-  }
-}
 
 .rdtPrev span,
 .rdtNext span {
