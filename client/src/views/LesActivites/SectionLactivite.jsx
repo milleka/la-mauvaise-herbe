@@ -18,28 +18,25 @@ class SectionLactivite extends React.Component {
             anim.push(
                 <div className={classes.container}>
                 <div className={classes.bloc}>
-                    <h3 className={classes.title}>Cueillettes</h3>
+                    <h3 className={classes.title}>Plantes médicinales sauvages</h3>
                     <div className={classes.ligne}>
                         <img className={classes.image} src={Photo} alt="Cueillette de plantes médicinales sauvages" />
                         <div className={classes.colonne}>
                             <h4 className={classes.titre}>Activites:</h4>
                             <p><strong>Cueillette de plantes médicinales sauvages.</strong>
-                                em ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                            Partons à la découverte de quelques plantes médicinales et apprenons
+                             à les cueillir. Je vous conterai leurs histoires, passées ou présentes 
+                             et leurs usages, reconnus ou dépassés. 
                             </p>
                             <div className={classes.ligne2}>
                                 <div className={classes.left}>
                                     <div className={classes.tarif}>
                                         <h5 className={classes.bold}>Tarif:</h5>
-                                        <p className={classes.valeur}>XX €</p>
+                                        <p className={classes.valeur}>Variable </p>
                                     </div>
                                     <div className={classes.duree}>
                                         <h5 className={classes.bold}>Durée:</h5>
-                                        <p className={classes.valeur}>XX h XX</p>
+                                        <p className={classes.valeur}>3 h 00 </p>
                                     </div>                                   
                                 </div>
                                 <div className={classes.right}>
@@ -59,9 +56,7 @@ class SectionLactivite extends React.Component {
         const { classes } = this.props;
         return (
             <div className={classes.container}>                
-                <div className={classes.lactivite}>
                     {this.oneActivity()}
-                </div>
             </div>
         );
     }

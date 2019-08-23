@@ -1,6 +1,6 @@
 import { container, title } from "assets/jss/material-kit-react.jsx";
 
-const kesakoStyle = {
+const lactiviteStyle = {
 sections: {
     padding: "70px 0"
   },
@@ -93,4 +93,4 @@ sections: {
   }
 }
 
-export default kesakoStyle;
+export default lactiviteStyle;
