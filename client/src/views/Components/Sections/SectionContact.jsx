@@ -13,7 +13,8 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import People from "@material-ui/icons/Person";
 import Personne from '@material-ui/icons/PersonOutline';
 import Email from "@material-ui/icons/Email";
-import CardFooter from "components/Card/CardFooter.jsx"
+import CardFooter from "components/Card/CardFooter.jsx";
+
 
 import contactStyle from "assets/jss/material-kit-react/views/componentsSections/contactStyle.jsx";
 
