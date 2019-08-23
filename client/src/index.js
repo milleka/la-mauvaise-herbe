@@ -26,6 +26,7 @@ import "assets/scss/material-kit-react.scss?v=1.7.0";
 import Components from "views/Components/PageAccueil.jsx";
 import Activités from "views/LesActivites/LesActivites.jsx";
 import Actualités from "views/Actualités/Actualités.jsx";
+import Inscription from "views/Inscription/Inscription.jsx";
 
 var hist = createBrowserHistory();
 
@@ -34,6 +35,7 @@ ReactDOM.render(
     <Switch>
       <Route path="/activités" component={Activités}/>
       <Route path="/actualités" component={Actualités}/>
+      <Route path="/inscription" component={Inscription}/>
       <Route path="/" component={Components} />
     </Switch>
   </Router>,
