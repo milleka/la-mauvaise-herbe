@@ -27,6 +27,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   
   Transition.displayName = "Transition";
 
+require('moment/locale/fr');
+
 class SectionReservationActiv extends React.Component {
     constructor(props) {
         super(props);
@@ -116,10 +118,12 @@ class SectionReservationActiv extends React.Component {
                       )
                     }}
                   />
+                  <div className={classes.espace}>
                   <Datetime
                     inputProps={{ placeholder: "Date et heure"
                     }}
                   />
+                  </div>
                   <CustomInput
                     labelText="Email"
                     id="material"

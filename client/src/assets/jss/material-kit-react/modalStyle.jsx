@@ -17,7 +17,11 @@
 */
 const modalStyle = {
   modal: {
-    borderRadius: "6px"
+    borderRadius: "6px",
+    width: "80%",
+    "@media (max-width: 425px)": {
+      width: "none",
+  },
   },
   modalHeader: {
     borderBottom: "none",

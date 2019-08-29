@@ -720,6 +720,10 @@ td.rdtYear:hover {
   border-radius: 50%;
   border: 1px solid rgb(0, 77, 0); }
 
+.rdtCount{
+  color: black;
+  border: 1px solid black;
+}
 .rdtCounterSeparator {
   padding: 7px;
   line-height: 100px; }
