@@ -11,6 +11,7 @@
         "jwt-simple": "^0.5.1",
         "mongoose": "^5.0.7",
         "password-hash": "^1.2.2",
+        "react-datetime-picker": "^2.7.1",
         "react-facebook": "^8.0.4"
     }
 }

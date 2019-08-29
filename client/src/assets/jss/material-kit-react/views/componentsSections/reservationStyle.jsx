@@ -35,6 +35,10 @@ const reservationStyles = {
   date: {
     color: "green",
   },
+  espace: {
+    marginBottom : "17px",
+    paddingTop: "27px",
+  },
   ...tooltipsStyle,
   ...popoverStyles
 };

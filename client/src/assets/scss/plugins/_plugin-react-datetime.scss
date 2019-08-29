@@ -286,9 +286,8 @@ td.rdtYear:hover {
 .rdtCounters {
   .rdtCounter:last-child {
     .rdtCount {
-      color: $brand-primary;
+      color: black;
       border-radius: 50%;
-      border: 1px solid $brand-primary;
     }
   }
 }
