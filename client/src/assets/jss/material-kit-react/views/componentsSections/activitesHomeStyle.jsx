@@ -44,6 +44,11 @@ bouton: {
     fontSize: "2vw",
     border: "0.1vw solid white",
     fontFamily: "'Abel', sans-serif",
+    "&:hover,&:focus": {
+        color: "rgb(134, 179, 0)",
+        border: "0.1vw solid rgb(134, 179, 0)",
+        transition: "color 0.5s ease",
+      },
 }
 
 }
