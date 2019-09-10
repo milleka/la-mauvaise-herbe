@@ -27,7 +27,9 @@ import Components from "client/views/Components/PageAccueil.jsx";
 import Activités from "client/views/LesActivites/LesActivites.jsx";
 import Actualités from "client/views/Actualités/Actualités.jsx";
 import Inscription from "client/views/Inscription/Inscription.jsx";
-import Admin from "server/views/components/PageAdmin.jsx"
+import Admin from "server/views/components/PageAdmin.jsx";
+import Dashboard from "server/views/components/PageDashboard.jsx";
+
 
 var hist = createBrowserHistory();
 
@@ -35,6 +37,7 @@ ReactDOM.render(
   <Router history={hist}>
     <Switch>
       <Route path="/admin" component={Admin}/>
+      <Route path="/dashboard" component={Dashboard}/>
       <Route path="/activités" component={Activités}/>
       <Route path="/actualités" component={Actualités}/>
       <Route path="/inscription" component={Inscription}/>

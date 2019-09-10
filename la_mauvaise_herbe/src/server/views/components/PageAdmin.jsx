@@ -1,8 +1,7 @@
 import React from "react";
 
 import styles from "../../assets/jss/pageAdminStyle.module.css";
-
-import { InputGroup, Button, FormGroup, FormControl } from "react-bootstrap";
+import{ auth } from '../../firebase/firebase.js';
 
 
 class PageAdmin extends React.Component {
@@ -14,60 +13,65 @@ class PageAdmin extends React.Component {
           password: ""
         };
       }
-    
-      validateForm() {
-        return this.state.email.length > 0 && this.state.password.length > 0;
-      }
-    
+        
       handleChange = event => {
+        const { name, value } = event.target;
         this.setState({
-          [event.target.id]: event.target.value
+          [name]: value
         });
       }
     
-      handleSubmit = event => {
+      handleSubmit = async (event) => {
         event.preventDefault();
+        const { email, password } = this.state;
+
+        try{
+          await auth.signInWithEmailAndPassword(email.trim(), password)
+            this.setState({
+              password:'',
+              email: ''
+            })
+            this.props.history.push("/dashboard");
+      } catch(error) {
+          console.log(error)
+      }
+        
       }
     
       render() {
+        console.log(this.state.email)
         return (
           <div className={styles.body}>
           <div className={styles.Login}>
             <h1 className={styles.titre}>Administrateur</h1>
             <form onSubmit={this.handleSubmit}>
-              <FormGroup controlId="email" bsSize="large">
-                <InputGroup.Prepend>
-                  <InputGroup.Text className={styles.texte} id="basic-addon1">Email</InputGroup.Text>
-                </InputGroup.Prepend>
-                  <FormControl
-                  className={styles.formu}
+                <label className={styles.texte}>
+                  Email
+                </label>
+                  <input
+                    name="email" 
+                    id="email"
+                    className={styles.formu}
                     placeholder="exemple@gmail.com"
-                    autoFocus
                     type="email"
                     value={this.state.email}
                     onChange={this.handleChange}
                   />
-              </FormGroup>
-              <FormGroup controlId="password" bsSize="large">
-                <InputGroup.Prepend>
-                    <InputGroup.Text className={styles.texte} id="basic-addon1">Mot de passe</InputGroup.Text>
-                </InputGroup.Prepend>
-                <FormControl
-                className={styles.formu}
-                  value={this.state.password}
+                <label className={styles.texte}>
+                    Mot de passe
+                </label>
+                <input
+                  name="password" 
+                  id="password"
+                  className={styles.formu}
                   onChange={this.handleChange}
+                  value={this.state.password}
                   type="password"
                 />
-              </FormGroup>
-              <Button
-              className={styles.submit}
-                block
-                bsSize="large"
-                disabled={!this.validateForm()}
+              <button
+                className={styles.submit}
                 type="submit"
-              >
-                Login
-              </Button>
+              >Login</button>
             </form>
           </div>
           </div>
