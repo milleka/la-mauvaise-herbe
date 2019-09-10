@@ -23,7 +23,7 @@ class SectionLactivite extends React.Component {
                         <img className={classes.image} src={Photo} alt="Cueillette de plantes médicinales sauvages" />
                         <div className={classes.colonne}>
                             <h4 className={classes.titre}>Activites:</h4>
-                            <p><strong>Cueillette de plantes médicinales sauvages.</strong>
+                            <p><strong>Cueillette de plantes médicinales sauvages. </strong>
                             Partons à la découverte de quelques plantes médicinales et apprenons
                              à les cueillir. Je vous conterai leurs histoires, passées ou présentes 
                              et leurs usages, reconnus ou dépassés. 
