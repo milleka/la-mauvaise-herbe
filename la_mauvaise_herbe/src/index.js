@@ -23,12 +23,16 @@ import { Router, Route, Switch } from "react-router-dom";
 import "client/assets/scss/material-kit-react.scss?v=1.7.0";
 
 // pages for this product
-import Components from "client/views/Components/PageAccueil.jsx";
+import PageAccueil from "client/views/Components/PageAccueil.jsx";
 import Activités from "client/views/LesActivites/LesActivites.jsx";
 import Actualités from "client/views/Actualités/Actualités.jsx";
 import Inscription from "client/views/Inscription/Inscription.jsx";
 import Admin from "server/views/components/PageAdmin.jsx";
 import Dashboard from "server/views/components/PageDashboard.jsx";
+import Infogenerale from "./server/views/components/info-generale/infogenerale.jsx";
+import Prochainevent from "./server/views/components/prochain-event/prochainevent.jsx";
+import Mesactivites from "./server/views/components/mes-activites/mesactivites.jsx";
+import Mesactu from "./server/views/components/mes-actu/mesctu.jsx";
 
 
 var hist = createBrowserHistory();
@@ -36,12 +40,16 @@ var hist = createBrowserHistory();
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
-      <Route path="/admin" component={Admin}/>
-      <Route path="/dashboard" component={Dashboard}/>
       <Route path="/activités" component={Activités}/>
       <Route path="/actualités" component={Actualités}/>
       <Route path="/inscription" component={Inscription}/>
-      <Route path="/" component={Components} />
+      <Route path="/admin" component={Admin}/>
+      <Route path="/dashboard" component={Dashboard}/>
+      <Route path="/infogenerale" component={Infogenerale}/>
+      <Route path="/prochainevent" component={Prochainevent}/>
+      <Route path="/mesactivites" component={Mesactivites}/>
+      <Route path="/mesactu" component={Mesactu}/>
+      <Route path="/" component={PageAccueil} />
     </Switch>
   </Router>,
   document.getElementById("root")

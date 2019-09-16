@@ -1,0 +1,22 @@
+.fondec{
+    display:flex;
+    flex-direction: column;
+    border: none;  
+}
+
+.fondec p {
+    margin-top: 5em;
+}
+
+.fondec img {
+    margin-top: 1em;
+    width: 19vw;
+}
+
+.fondec button {
+    width: 10vw;
+    height: 5vh;
+    border-radius: 5em;
+    border: 0.1em solid black;
+    margin-top: 1em;
+}

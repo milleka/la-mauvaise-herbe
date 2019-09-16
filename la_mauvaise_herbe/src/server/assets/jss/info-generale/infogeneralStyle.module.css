@@ -1,0 +1,65 @@
+.head1 {
+    background-color: rgb(0, 77, 0); 
+    padding: 4vh 0;
+}
+
+.head1 h1 {
+    text-align: center;
+    margin: 0;
+    color: white;
+    font-weight: 600;
+} 
+
+th {
+    padding: 0 5em;
+    text-align: center;
+}
+
+thead th {
+    padding: 2em 0;
+    border-bottom: 0.1em solid black;
+
+}
+
+thead .fond {
+    border-left: none;
+}
+
+
+.kezako {
+    border-right: 0.1em solid black;
+    border-left: 0.1em solid black;
+}
+
+.kezako p {
+    margin-top: 2em;
+}
+
+.kezako img {
+    width: 20vw;
+}
+
+.lien {
+    display:flex;
+    flex-direction: column;
+    border: none;
+}
+
+.lien input {
+    height: 5vh;
+    border-radius: 5em;
+    border: none;
+    margin-bottom: 1em;
+}
+
+.lien input::placeholder {
+    padding-left: 1em;
+}
+
+table button {
+    width: 10vw;
+    height: 5vh;
+    border-radius: 5em;
+    border: 0.1em solid black;
+    margin-top: 1em;
+}
