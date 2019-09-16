@@ -14,7 +14,7 @@ import Header from "../../components/Header/Header.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import GridContainer from "../../components/Grid/GridContainer.jsx";
 import GridItem from "../../components/Grid/GridItem.jsx";
-import Parallax from "../../components/Parallax/Parallax.jsx";
+//import Parallax from "../../components/Parallax/Parallax.jsx";
 import HeaderLinks from "../../components/Header/HeaderLinks.jsx";
 
 // sections for this page
@@ -26,11 +26,45 @@ import SectionContact from "./Sections/SectionContact.jsx";
 
 import logo from '../../assets/img/lamauvaiseherbe.png';
 
+import {store} from '../../../server/firebase/firebase.js';
+
 import pageAccueilStyle from "../../assets/jss/material-kit-react/views/pageAccueilStyle.jsx";
+import Parallax from "client/components/Parallax/Parallax.jsx";
 
 
 class PageAccueil extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      url:'',
+    }
+  }
+
+  getPath = async () => {
+    const images = await store.child('fondecran').listAll();
+    const res = images;
+    return res.items[0].location.path ;
+  }
+
+getUrl = async (path) => {
+    console.log(this.state.url)
+    store.child(`${path}`).getDownloadURL().then((url) => {
+      console.log(this.state.url)
+      let imgUrl = url
+    return this.setState({url: imgUrl})
+  }).catch((error) => {
+    console.log(error);
+  })
+}
+
+componentDidMount= async () => {
+  let path = await this.getPath();
+  console.log(path)
+  this.getUrl(path);
+}
+  
   render() {
+    console.log(this.state.url);
     const { classes, ...rest } = this.props;
     return (
       <div>
@@ -45,7 +79,7 @@ class PageAccueil extends React.Component {
           }}
           {...rest}
         />
-        <Parallax image={require("../../assets/img/les_plantes_medicinales.jpg")}>
+        <Parallax image={`${this.state.url}`}>
           <div className={classes.container}>
             <GridContainer>
               <GridItem>
@@ -59,8 +93,7 @@ class PageAccueil extends React.Component {
               </GridItem>
             </GridContainer>
           </div>
-        </Parallax>
-
+          </Parallax>
         <div className={classNames(classes.main, classes.mainRaised)}>
           <SectionKesako />
           <SectionEvent/>
