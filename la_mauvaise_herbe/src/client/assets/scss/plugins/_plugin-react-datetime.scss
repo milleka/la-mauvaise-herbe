@@ -22,7 +22,7 @@
   }
   input.form-control {
     border: 0;
-    background-image: linear-gradient(#9c27b0, #9c27b0),
+    background-image: linear-gradient(rgb(0, 77, 0), rgb(0, 77, 0)),
       linear-gradient(#d2d2d2, #d2d2d2);
     background-size: 0 2px, 100% 1px;
     background-repeat: no-repeat;
@@ -42,7 +42,7 @@
     line-height: 1.42857;
     display: block;
     width: 100%;
-    color: #555;
+    color: rgb(126, 125, 125);
   }
   input.form-control:focus {
     outline: none;
@@ -67,52 +67,17 @@
   background-clip: padding-box;
   min-width: 160px;
 
-  &:before {
-    display: inline-block;
-    position: absolute;
-    width: 0;
-    height: 0;
-    vertical-align: middle;
-    content: "";
-    top: -5px;
-    left: 10px;
-    right: auto;
-    color: #ffffff;
-    border-bottom: 0.4em solid;
-    border-right: 0.4em solid transparent;
-    border-left: 0.4em solid transparent;
-  }
-  &:after {
-    border-bottom: 0.4em solid #ffffff;
-    border-right: 0.4em solid transparent;
-    border-left: 0.4em solid transparent;
-    content: "";
-    display: inline-block;
-    position: absolute;
-    top: -5px;
-    left: 10px;
-  }
 }
 
 .rdtPicker {
   display: block;
   top: 40px;
 }
-.rdtStatic .rdtPicker {
-  box-shadow: none;
-  position: static;
-}
-
-.rdtPicker .rdtTimeToggle {
-  text-align: center;
-  padding: 5px;
-  border-radius: 4px;
-}
 
 .rdtPicker table {
   width: 100%;
   margin: 0;
-  border-color: $white-color !important;
+  border-color: white !important;
   border-collapse: collapse;
 }
 .rdtPicker td,
@@ -134,8 +99,7 @@
   &.rdtActive,
   &.rdtActive:hover {
     background-color: rgb(0, 77, 0) !important;
-    color: $white-color;
-    @include shadow-big-color($brand-primary);
+    color: white;
   }
 }
 .rdtDays {
@@ -151,7 +115,7 @@
     }
     .rdtOld,
     .rdtNew {
-      color: $grey-a400;
+      color: grey;
     }
   }
 }
@@ -301,7 +265,7 @@ td.rdtYear:hover {
   cursor: pointer;
   display: block;
   border-radius: 50%;
-  color: $grey-a200;
+  color: grey;
   -webkit-transition: all 60ms ease-in;
   -moz-transition: all 60ms ease-in;
   -o-transition: all 60ms ease-in;
@@ -350,8 +314,8 @@ td.rdtYear:hover {
     text-align: center;
 
     &.rdtActive {
-      background-color: $brand-primary !important;
-      color: $white-color;
+      background-color: rgb(0, 77, 0)  !important;
+      color: white;
     }
   }
 }

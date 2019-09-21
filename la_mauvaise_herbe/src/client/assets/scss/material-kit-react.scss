@@ -16,15 +16,16 @@
 
  */
 
-@import "core/variables";
-@import "core/mixins";
 
 // Core Components
+
+// pour gérer le styles des écritures et du body 
 @import "core/misc";
 
 // Core Plugins
 
-// @import "plugins/plugin-datetime-picker";
-@import "plugins/plugin-nouislider";
+// pour gérer le calendrier des réservations 
 @import "plugins/plugin-react-datetime";
+
+//pour gérer le diapo
 @import "plugins/plugin-react-slick";
