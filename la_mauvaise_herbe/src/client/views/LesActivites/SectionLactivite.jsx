@@ -16,7 +16,7 @@ class SectionLactivite extends React.Component {
         var anim = []
         for (let i = 0; i < 3; i++) {
             anim.push(
-                <div className={classes.container}>
+                <div key={anim} className={classes.container}>
                 <div className={classes.bloc}>
                     <h3 className={classes.title}>Plantes médicinales sauvages</h3>
                     <div className={classes.ligne}>

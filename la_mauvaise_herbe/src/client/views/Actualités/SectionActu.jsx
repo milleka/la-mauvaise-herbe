@@ -15,7 +15,7 @@ class SectionActu extends React.Component {
         var anim = []
         for (let i = 0; i < 6; i++) {
             anim.push(
-                <div className={classes.contenu}>
+                <div key={anim} className={classes.contenu}>
                 <a className={classes.a} href="http://www.sauvagesdupoitou.com/81/635?fbclid=IwAR0aBfTJ8lNtVtFTv2OPqGc4A82HqB1pK-dH1w3z-3TJWftik2hGmp3yu_Q" target="_blank" rel="noopener noreferrer" alt="CIRCÉE DE PARIS: TITI LA PETITE SORCIÈRE">
                     <h3 className={classes.title}>Circée de Paris</h3>
                     <p className={classes.text}>20 août, 11h52</p>

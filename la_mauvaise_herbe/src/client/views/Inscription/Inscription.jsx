@@ -85,7 +85,7 @@ class Inscription extends React.Component {
             />
             <CustomInput
                 labelText="Prénom"
-                id="first"
+                id="first2"
                 formControlProps={{
                 fullWidth: true
                 }}
@@ -133,7 +133,7 @@ class Inscription extends React.Component {
                 />
                 <CustomInput
                     labelText=" Validation du Mot de passe"
-                    id="pass"
+                    id="pass2"
                     formControlProps={{
                         fullWidth: true
                     }}
