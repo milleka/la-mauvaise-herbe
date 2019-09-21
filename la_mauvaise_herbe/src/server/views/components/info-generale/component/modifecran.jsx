@@ -50,15 +50,15 @@ class modifecran extends React.Component {
     
   render() {
     return (
-        <th className={styles.fondec}>
+        <div className={styles.fondec}>
             <p>Choisir un fond d'écran:</p>
             <input type="file"
                 onChange={this.handleChange}
                 id="fondecran" name="fondecran"
                 accept="image/png, image/jpeg"/>
             <button onClick={this.handleUpload}>Modifier</button>
-            <img src={this.state.url} alt="fond d'écran"/>
-        </th>
+            <img src={this.state.url || 'http://via.placeholder.com/400x300'} alt="fond d'écran"/>
+        </div>
     );
   }
 }

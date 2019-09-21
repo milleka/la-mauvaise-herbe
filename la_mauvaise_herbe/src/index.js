@@ -35,6 +35,7 @@ import Mesactivites from "./server/views/components/mes-activites/mesactivites.j
 import Mesactu from "./server/views/components/mes-actu/mesctu.jsx";
 
 
+
 var hist = createBrowserHistory();
 
 ReactDOM.render(
