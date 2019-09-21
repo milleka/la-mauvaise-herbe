@@ -9,11 +9,44 @@ import Spa from "@material-ui/icons/Spa";
 import Nature from "@material-ui/icons/Nature";
 
 import kesakoStyle from "../../../assets/jss/material-kit-react/views/componentsSections/kesakoStyle.jsx";
-import matt from "../../../assets/img/carex.jpg";
+import {store} from '../../../../server/firebase/firebase.js';
 
 
 
 class SectionKesako extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+          url:'',
+        }
+      }
+
+    //lire image kezako bdd firebase
+    
+      getPath = async () => {
+        const images = await store.child('imageKezako').listAll();
+        const res = images;
+        return res.items[0].location.path ;
+      }
+    
+    getUrl = async (path) => {
+        console.log(this.state.url)
+        store.child(`${path}`).getDownloadURL().then((url) => {
+          console.log(this.state.url)
+          let imgUrl = url
+        return this.setState({url: imgUrl})
+      }).catch((error) => {
+        console.log(error);
+      })
+    }
+    
+    componentDidMount= async () => {
+      let path = await this.getPath();
+      console.log(path)
+      this.getUrl(path);
+    }
+
+
     render() {
         const { classes } = this.props;
         return (
@@ -22,7 +55,7 @@ class SectionKesako extends React.Component {
                     <h2>Kesako</h2>
                 </div>
                 <div className={classes.kesako}>
-                    <img className={classes.image} src={matt} alt="Matthieu chassaing, animateur des animations la mauvaise herbe"/>
+                    <img className={classes.image} src={this.state.url} alt="Matthieu chassaing, animateur des animations la mauvaise herbe"/>
                     <div className={classes.question}>
                         <div className={classes.titre}>
                             <Filtervintage className={classes.signe}/>
