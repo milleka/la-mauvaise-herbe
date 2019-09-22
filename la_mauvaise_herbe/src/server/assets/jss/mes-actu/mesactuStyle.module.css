@@ -1,0 +1,11 @@
+.head1 {
+    background-color: rgb(0, 77, 0); 
+    padding: 4vh 0;
+}
+
+.head1 h1 {
+    text-align: center;
+    margin: 0;
+    color: white;
+    font-weight: 600;
+} 
