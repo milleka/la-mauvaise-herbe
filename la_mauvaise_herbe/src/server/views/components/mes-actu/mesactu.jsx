@@ -2,18 +2,18 @@ import React from "react";
 
 import Head from "../head2/head2.jsx";
 
-import styles from "../../../assets/jss/mes-activites/mesactivitesStyle.module.css";
+import styles from "../../../assets/jss/mes-actu/mesactuStyle.module.css";
 
 
 
 
-class mesactivites extends React.Component {
+class mesactu extends React.Component {
   render() {
     return (
       <div className={styles.infogenerale}>
           <header>
           <div className={styles.head1}>
-            <h1>Mes activités</h1>
+            <h1>Mes actualités</h1>
           </div>
           <Head/>
         </header>
@@ -22,4 +22,4 @@ class mesactivites extends React.Component {
   }
 }
 
-export default mesactivites;
+export default mesactu;

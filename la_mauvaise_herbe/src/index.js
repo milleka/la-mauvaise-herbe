@@ -32,7 +32,7 @@ import Dashboard from "server/views/components/PageDashboard.jsx";
 import Infogenerale from "./server/views/components/info-generale/infogenerale.jsx";
 import Prochainevent from "./server/views/components/prochain-event/prochainevent.jsx";
 import Mesactivites from "./server/views/components/mes-activites/mesactivites.jsx";
-import Mesactu from "./server/views/components/mes-actu/mesctu.jsx";
+import Mesactu from "./server/views/components/mes-actu/mesactu.jsx";
 
 
 
