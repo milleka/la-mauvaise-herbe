@@ -13,13 +13,14 @@ import { Link } from "react-router-dom";
 
 import footerStyle from "../../assets/jss/material-kit-react/components/footerStyle.jsx";
 
-function Footer({ ...props }) {
-  const { classes, whiteFont } = props;
-  const footerClasses = classNames({
-    [classes.footer]: true,
-    [classes.footerWhiteFont]: whiteFont
-  });
+class Footer extends React.Component {
   
+  render() {
+    const { classes, whiteFont } = this.props;
+    const footerClasses = classNames({
+      [classes.footer]: true,
+      [classes.footerWhiteFont]: whiteFont
+  });
   return (
     <footer className={footerClasses}>
       <div className={classes.bloc}>
@@ -69,7 +70,9 @@ function Footer({ ...props }) {
       </div>
     </footer>
   );
+  }
 }
+
 
 Footer.propTypes = {
   classes: PropTypes.object.isRequired,

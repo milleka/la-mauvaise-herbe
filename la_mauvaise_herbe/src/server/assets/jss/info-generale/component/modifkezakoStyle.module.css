@@ -6,7 +6,7 @@
     border-right: 0.1em solid black;
     border-left: 0.1em solid black; 
     width: 100%;
-    height: 210vh;
+    height: 230vh;
     padding: 0 4em;
 }
 
@@ -31,4 +31,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.kezako textarea {
+    margin-top: 10px;
 }
