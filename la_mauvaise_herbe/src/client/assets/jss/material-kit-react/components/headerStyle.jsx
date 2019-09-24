@@ -74,13 +74,13 @@ const headerStyle = {
     textTransform: "none",
     color: "inherit",
     padding: "20px",
-    backgroundColor: "rgba(255,255,255, 0.3)",
+    backgroundColor: "white",
     borderRadius: "50%",
     marginTop: "0.8em",
     letterSpacing: "unset",
     "&:hover,&:focus": {
       color: "transparent",
-      background: "rgba(200, 200, 200, 0.2)"
+      background: "rgba(200, 200, 200, 0.8)"
     },
   },
   appResponsive: {

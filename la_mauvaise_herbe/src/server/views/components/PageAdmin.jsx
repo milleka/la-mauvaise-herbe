@@ -39,7 +39,6 @@ class PageAdmin extends React.Component {
       }
     
       render() {
-        console.log(this.state.email)
         return (
           <div className={styles.body}>
           <div className={styles.Login}>
