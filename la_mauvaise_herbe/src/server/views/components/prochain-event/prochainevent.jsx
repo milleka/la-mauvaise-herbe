@@ -7,6 +7,8 @@ import styles from "../../../assets/jss/prochainevent/prochaineventStyle.module.
 import Firstevent from "./component/firstevent.jsx";
 import Twoevent from "./component/twoevent.jsx";
 import Threeevent from "./component/threeevent.jsx";
+import Fourevent from "./component/fourevent.jsx";
+import Fiveevent from "./component/fiveevent.jsx";
 
 
 
@@ -27,6 +29,10 @@ class prochainevent extends React.Component {
         <Twoevent/>
         <h3>3ème évènement</h3>
         <Threeevent/>
+        <h3>4ème évènements</h3>
+        <Fourevent/>
+        <h3>5ème évènements</h3>
+        <Fiveevent/>
       </div>
     );
   }

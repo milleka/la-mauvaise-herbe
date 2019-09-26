@@ -26,7 +26,6 @@ import "client/assets/scss/material-kit-react.scss?v=1.7.0";
 import PageAccueil from "client/views/Components/PageAccueil.jsx";
 import Activités from "client/views/LesActivites/LesActivites.jsx";
 import Actualités from "client/views/Actualités/Actualités.jsx";
-import Inscription from "client/views/Inscription/Inscription.jsx";
 import Admin from "server/views/components/PageAdmin.jsx";
 import Dashboard from "server/views/components/PageDashboard.jsx";
 import Infogenerale from "./server/views/components/info-generale/infogenerale.jsx";
@@ -43,7 +42,6 @@ ReactDOM.render(
     <Switch>
       <Route path="/activités" component={Activités}/>
       <Route path="/actualités" component={Actualités}/>
-      <Route path="/inscription" component={Inscription}/>
       <Route path="/admin" component={Admin}/>
       <Route path="/dashboard" component={Dashboard}/>
       <Route path="/infogenerale" component={Infogenerale}/>

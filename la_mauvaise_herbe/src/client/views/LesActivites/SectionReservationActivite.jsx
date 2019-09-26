@@ -19,7 +19,6 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import People from "@material-ui/icons/Person";
 import Personne from '@material-ui/icons/PersonOutline';
 import Email from '@material-ui/icons/Email';
-import Datetime from "react-datetime";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="down" ref={ref} {...props} />;
@@ -56,7 +55,7 @@ class SectionReservationActiv extends React.Component {
                 onClick={() => this.handleClickOpen("classicModal")}
             >
                 <LibraryBooks className={classes.icon} />
-                Réservation
+                Information
             </Button>
             <Dialog
                 classes={{
@@ -84,7 +83,7 @@ class SectionReservationActiv extends React.Component {
                     >
                         <Close className={classes.modalClose} />
                     </IconButton>
-                    <h4 className={classes.modalTitle}>Demande de réservation !</h4>
+                    <h4 className={classes.modalTitle}>Demande d'information !</h4>
                 </DialogTitle>
                 <DialogContent
                     id="classic-modal-slide-description"
@@ -118,12 +117,6 @@ class SectionReservationActiv extends React.Component {
                       )
                     }}
                   />
-                  <div className={classes.espace}>
-                  <Datetime
-                    inputProps={{ placeholder: "Date et heure"
-                    }}
-                  />
-                  </div>
                   <CustomInput
                     labelText="Email"
                     id="material"
@@ -138,6 +131,17 @@ class SectionReservationActiv extends React.Component {
                       )
                     }}
                   />
+                   <CustomInput
+                        labelText="Message"
+                        id="textarea-input"
+                        formControlProps={{
+                            fullWidth: true
+                        }}
+                        inputProps={{
+                            multiline: true,
+                            rows: 5
+                        }}
+                    />
                 </DialogContent>
                 <DialogActions className={classes.modalFooter}>
                     <Button color="transparent" simple>

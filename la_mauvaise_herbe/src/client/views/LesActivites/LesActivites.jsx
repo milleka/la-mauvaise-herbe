@@ -16,7 +16,7 @@ import GridItem from "../../components/Grid/GridItem.jsx";
 //import Button from "components/CustomButtons/Button.jsx";
 import Parallax from "../../components/Parallax/Parallax.jsx";
 // sections for this page
-import HeaderLinks from "../../components/Header/HeaderLinks.jsx";
+import HeaderLinks2 from "../../components/Header/HeaderLinks2.jsx";
 
 import logo from '../../assets/img/lamauvaiseherbe.png';
 
@@ -48,7 +48,7 @@ class LesActivites extends React.Component {
       <div ref={this.childDiv}>
         <Header
           brand={logo}
-          rightLinks={<HeaderLinks />}
+          rightLinks={<HeaderLinks2 />}
           absolute
           color="transparent"
           changeColorOnScroll={{

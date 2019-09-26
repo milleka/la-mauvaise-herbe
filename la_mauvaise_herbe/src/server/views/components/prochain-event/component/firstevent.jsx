@@ -69,6 +69,10 @@ class firstevent extends React.Component {
                     <input type="text" id="lieu" name="lieu" required />
                 </fieldset>
                 <fieldset>
+                    <label htmlFor="tarif">Tarif</label>
+                    <input type="text" id="tarif" name="tarif" required />
+                </fieldset>
+                <fieldset>
                     <label htmlFor="date-heure">Date et Heure</label>
                     <input type="datetime-local" id="date-heure" name="date-heure" required/>
                 </fieldset>

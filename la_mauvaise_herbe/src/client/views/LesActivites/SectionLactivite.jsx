@@ -30,17 +30,14 @@ class SectionLactivite extends React.Component {
                             </p>
                             <div className={classes.ligne2}>
                                 <div className={classes.left}>
-                                    <div className={classes.tarif}>
-                                        <h5 className={classes.bold}>Tarif:</h5>
-                                        <p className={classes.valeur}>Variable </p>
-                                    </div>
                                     <div className={classes.duree}>
                                         <h5 className={classes.bold}>Durée:</h5>
                                         <p className={classes.valeur}>3 h 00 </p>
                                     </div>                                   
                                 </div>
                                 <div className={classes.right}>
-                                    <Reservation/>
+                                    <p>Vous voulez poser une question ?</p>
+                                    <Reservation className={classes.bouton}/>
                                 </div>
                             </div>
                         </div>

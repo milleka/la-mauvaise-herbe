@@ -5,11 +5,11 @@ import styles from "../../../../assets/jss/prochainevent/prochaineventStyle.modu
 import {storage} from '../../../../firebase/firebase.js';
 
 
-class threeevent extends React.Component {
+class fiveevent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            imgevent3: null,
+            imgevent5: null,
             url: '',
         }
         this.handleChange = this
@@ -20,15 +20,15 @@ class threeevent extends React.Component {
 
     handleChange = e => {
         if(e.target.files[0]) {
-            const imgevent3 = e.target.files[0];
-            this.setState(() => ({imgevent3}));
+            const imgevent5 = e.target.files[0];
+            this.setState(() => ({imgevent5}));
         }
     }
 
     handleUpload = () => {
-        const {imgevent3} = this.state;
-        console.log(imgevent3);
-        const uploadTask = storage.ref(`evenements/event3/${imgevent3.name}`).put(imgevent3);
+        const {imgevent5} = this.state;
+        console.log(imgevent5);
+        const uploadTask = storage.ref(`evenements/event5/${imgevent5.name}`).put(imgevent5);
         uploadTask.on('state_changed', 
         (snapshot) => {
             // progress function...
@@ -39,7 +39,7 @@ class threeevent extends React.Component {
         },
         () => {
             //complete function...
-            storage.ref('evenements/event3/').child(imgevent3.name).getDownloadURL().then(url => {
+            storage.ref('evenements/event5/').child(imgevent5.name).getDownloadURL().then(url => {
                 console.log(url);
                 this.setState({url});
             })
@@ -53,7 +53,7 @@ class threeevent extends React.Component {
             <p>Choix de la photo:</p>
                 <input type="file"
                     onChange={this.handleChange}
-                    id="imgevent3" name="imgevent3"
+                    id="imgevent5" name="imgevent5"
                     accept="image/png, image/jpeg" required/>
                 <button onClick={this.handleUpload}>Ajouter</button>
             <img src={this.state.url || 'http://via.placeholder.com/400x300'} alt="fond d'écran"/>
@@ -84,4 +84,4 @@ class threeevent extends React.Component {
   }
 }
 
-export default threeevent;
+export default fiveevent;
