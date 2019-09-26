@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // react components for routing our app without refresh
-
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 
@@ -32,6 +31,8 @@ import pageAccueilStyle from "../../assets/jss/material-kit-react/views/pageAccu
 import Parallax from "client/components/Parallax/Parallax.jsx";
 
 
+
+
 class PageAccueil extends React.Component {
   constructor(props){
     super(props);
@@ -47,9 +48,7 @@ class PageAccueil extends React.Component {
   }
 
 getUrl = async (path) => {
-    console.log(this.state.url)
     store.child(`${path}`).getDownloadURL().then((url) => {
-      console.log(this.state.url)
       let imgUrl = url
     return this.setState({url: imgUrl})
   }).catch((error) => {
@@ -59,12 +58,10 @@ getUrl = async (path) => {
 
 componentDidMount= async () => {
   let path = await this.getPath();
-  console.log(path)
   this.getUrl(path);
 }
   
   render() {
-    console.log(this.state.url);
     const { classes, ...rest } = this.props;
     return (
       <div>
@@ -96,7 +93,7 @@ componentDidMount= async () => {
           </Parallax>
         <div className={classNames(classes.main, classes.mainRaised)}>
           <SectionKesako />
-          <SectionEvent/>
+          <SectionEvent />
           <SectionActivites/>
           <br/>
           <br/>

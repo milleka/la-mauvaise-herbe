@@ -31,7 +31,7 @@ class SectionEvent extends React.Component {
             autoplay: false
         };
         return (
-            <div className={classes.container}>
+            <div className={classes.container} id="evenements">
                 <div className={classes.title}>
                     <h2>Événements à venir</h2>
                 </div>

@@ -81,7 +81,7 @@ class modifkezako extends React.Component {
     async writeQui(e) {
         e.preventDefault();
 
-        var changeText = firestore.collection('evenements').doc('qui');
+        var changeText = firestore.collection('kezako').doc('qui');
         console.log(changeText)
         let texte = this.state.qui;
         let titre = this.state.titreQui;
@@ -118,7 +118,7 @@ class modifkezako extends React.Component {
     async writePourquoi(e) {
         e.preventDefault();
 
-        var changeText = firestore.collection('evenements').doc('pourquoi');
+        var changeText = firestore.collection('kezako').doc('pourquoi');
         console.log(changeText)
         let texte = this.state.pourquoi;
         let titre = this.state.titrePourquoi;
@@ -156,7 +156,7 @@ class modifkezako extends React.Component {
     async writeQuel(e) {
         e.preventDefault();
 
-        var changeText = firestore.collection('evenements').doc('quel');
+        var changeText = firestore.collection('kezako').doc('quel');
         console.log(changeText)
         let texte = this.state.quel;
         let titre = this.state.titreQuel;

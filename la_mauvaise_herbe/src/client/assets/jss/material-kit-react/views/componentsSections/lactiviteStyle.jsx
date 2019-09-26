@@ -24,7 +24,8 @@ sections: {
   ligne2 :{
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "center",
+    marginTop: "15px", 
     "@media (max-width: 490px)": {
       flexDirection: "column",
       alignItems: "center",
@@ -38,13 +39,13 @@ sections: {
     width: "50%",
   },
   right: {
-      width: "20%",
+      width: "35%",
       "@media (max-width: 990px)": {
-        width: "30%",
+        width: "35%",
       },
       "@media (max-width: 490px)": {
         paddingTop: "1em",
-        width: "60%",
+        width: "80%",
       },
   },
   tarif: {

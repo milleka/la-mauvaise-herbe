@@ -9,17 +9,47 @@ import Spa from "@material-ui/icons/Spa";
 import Nature from "@material-ui/icons/Nature";
 
 import kesakoStyle from "../../../assets/jss/material-kit-react/views/componentsSections/kesakoStyle.jsx";
-import {store} from '../../../../server/firebase/firebase.js';
+import {store, firestore} from '../../../../server/firebase/firebase.js';
 
 
 
 class SectionKesako extends React.Component {
     constructor(props){
         super(props);
+
+        //this.database = firestore.collection('kezako').doc('qui')
+
         this.state = {
           url:'',
+          titreQui: '',
+          qui: '',
         }
       }
+
+
+      UNSAFE_componentWillMount () {
+        const ref = firestore.collection('kezako').doc('qui');
+
+        ref.get().then((doc) => {
+          if (doc.exists) {
+            console.log("document data:", doc.data());
+          } else {
+            console("no sush document!");
+          }
+        }).catch(function(error) {
+          console.log("error getting document:", error);
+        });
+      }
+    /*componentDidMount() {
+      this.database.on('value', snap => {
+        this.setState({
+          titreQui: snap.val(this.state.titre),
+          qui: snap.val()
+        });
+      });
+    }*/
+
+    
 
     //lire image kezako bdd firebase
     
@@ -30,9 +60,7 @@ class SectionKesako extends React.Component {
       }
     
     getUrl = async (path) => {
-        console.log(this.state.url)
         store.child(`${path}`).getDownloadURL().then((url) => {
-          console.log(this.state.url)
           let imgUrl = url
         return this.setState({url: imgUrl})
       }).catch((error) => {
@@ -42,7 +70,6 @@ class SectionKesako extends React.Component {
     
     componentDidMount= async () => {
       let path = await this.getPath();
-      console.log(path)
       this.getUrl(path);
     }
 
@@ -59,14 +86,10 @@ class SectionKesako extends React.Component {
                     <div className={classes.question}>
                         <div className={classes.titre}>
                             <Filtervintage className={classes.signe}/>
-                            <h3>Qui suis-je ?</h3>
+                            <h3>{this.state.titreQui}</h3>
                         </div>
                         <p className={classes.text}>
-                            Père castor, professeur tournesol, Jammy.
-                            Des surnoms qui m'ont été donnés lors des années précédentes.
-                            Tout ça parce que j'aime raconter des histoires, facile.
-                            Des histoires de géologie, de cailloux, d'oiseaux, de plantes et d'arbres.
-                            De paysage et de rivières, de montagnes et de sable.
+                            {this.state.qui}
                         </p>
                         <div className={classes.titre}>
                             <Spa className={classes.signe}/>
