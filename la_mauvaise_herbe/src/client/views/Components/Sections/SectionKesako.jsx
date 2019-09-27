@@ -17,22 +17,47 @@ class SectionKesako extends React.Component {
     constructor(props){
         super(props);
 
-        //this.database = firestore.collection('kezako').doc('qui')
-
         this.state = {
           url:'',
-          titreQui: '',
-          qui: '',
+          infosQui: '',
+          infosPourquoi: '',
+          infosQuel: '',
         }
       }
 
 
       UNSAFE_componentWillMount () {
-        const ref = firestore.collection('kezako').doc('qui');
+        const refQui = firestore.collection('kezako').doc('qui');
+        const refPourquoi = firestore.collection('kezako').doc('pourquoi');
+        const refQuel = firestore.collection('kezako').doc('quel');
 
-        ref.get().then((doc) => {
+
+        //infos qui ?
+        refQui.get().then((doc) => {
           if (doc.exists) {
-            console.log("document data:", doc.data());
+            return this.setState({infosQui:doc.data() })
+          } else {
+            console("no sush document!");
+          }
+        }).catch(function(error) {
+          console.log("error getting document:", error);
+        });
+
+        //infos pourquoi ?
+        refPourquoi.get().then((doc) => {
+          if (doc.exists) {
+            return this.setState({infosPourquoi:doc.data() })
+          } else {
+            console("no sush document!");
+          }
+        }).catch(function(error) {
+          console.log("error getting document:", error);
+        });
+
+        //infos quel ?
+        refQuel.get().then((doc) => {
+          if (doc.exists) {
+            return this.setState({infosQuel:doc.data() })
           } else {
             console("no sush document!");
           }
@@ -40,16 +65,6 @@ class SectionKesako extends React.Component {
           console.log("error getting document:", error);
         });
       }
-    /*componentDidMount() {
-      this.database.on('value', snap => {
-        this.setState({
-          titreQui: snap.val(this.state.titre),
-          qui: snap.val()
-        });
-      });
-    }*/
-
-    
 
     //lire image kezako bdd firebase
     
@@ -86,31 +101,24 @@ class SectionKesako extends React.Component {
                     <div className={classes.question}>
                         <div className={classes.titre}>
                             <Filtervintage className={classes.signe}/>
-                            <h3>{this.state.titreQui}</h3>
+                            <h3>{this.state.infosQui.titre}</h3>
                         </div>
                         <p className={classes.text}>
-                            {this.state.qui}
+                            {this.state.infosQui.texte}
                         </p>
                         <div className={classes.titre}>
                             <Spa className={classes.signe}/>
-                            <h3>Pourquoi la mauvaise herbe ?</h3>   
+                            <h3>{this.state.infosPourquoi.titre}</h3>   
                         </div>
                         <p className={classes.text}>
-                            Parce que cette indisciplinée, qui pousse où elle le souhaite, quand elle le
-                            décide, à travers champs et à travers les décombres, a suivi l'homme toute
-                            sa vie. Pour se nourrir, se vêtir, mais aussi se soigner ou jouer.
-                            Elle se trouve hors champs, loin des chemins balisés. Comme mes
-                            animations... Cette herbe est malmenée. Nous allons lui redonner ses
-                            lettres de noblesse.
+                        {this.state.infosPourquoi.texte}
                         </p>
                         <div className={classes.titre}>
                             <Nature className={classes.signe}/>
-                            <h3>Sur quel principe ?</h3>
+                            <h3>{this.state.infosQuel.titre}</h3>
                         </div>
                         <p className={classes.text}>
-                            Je propose des balades accompagnées sur les plantes sauvages
-                            médicinales, sur la botanique ou le paysage mais également tout un tas
-                            d'autres activités qui raviront, j’espère, le plus grand nombre.
+                        {this.state.infosQuel.texte}
                             <strong>Bonne visite et à bientôt lors d'une de nos balade...</strong>
                         </p>
                     </div>

@@ -20,7 +20,6 @@ class modifkezako extends React.Component {
             quel: '',
         }
 
-    //envoyer et afficher la photo 
 
         this.handleChange = this
             .handleChange
@@ -177,17 +176,15 @@ class modifkezako extends React.Component {
     return (
         <div className={styles.kezako}>
             <p>Modifier l'image:</p>
-            <form>
             <input type="file"
                 onChange={this.handleChange}
                 id="image" name="image"
                 accept="image/png, image/jpeg" required/>
                 <button onClick={this.handleUpload}>Modifier</button>
                 <img src={this.state.url || 'http://via.placeholder.com/400x500'} alt="kezako"/>
-            </form>
             <p>Modification qui suis je :</p>
             <form onSubmit={e => this.writeQui(e)}>
-                <label for="titre">titre</label>
+                <label htmlFor="titre">titre</label>
                 <input type="text" id="titre" name="titre" required onChange={this.handleChangeTitreQui} />
                 <textarea id="qui" name="qui"
                 rows="10" cols="40" onChange={this.handleChangeQui} required></textarea>
@@ -195,7 +192,7 @@ class modifkezako extends React.Component {
             </form>
             <p>Modification du pourquoi :</p>
             <form onSubmit={e => this.writePourquoi(e)}>
-                <label for="titre">titre</label>
+                <label htmlFor="titre">titre</label>
                 <input type="text" id="titre" name="titre" required onChange={this.handleChangeTitrePourquoi} />
                 <textarea id="pourquoi" name="pourquoi"
                 rows="10" cols="40" onChange={this.handleChangePourquoi} required></textarea>
@@ -203,7 +200,7 @@ class modifkezako extends React.Component {
             </form>
             <p>Modification sur quel principe :</p>
             <form onSubmit={e => this.writeQuel(e)}>
-                <label for="titre">titre</label>
+                <label htmlFor="titre">titre</label>
                 <input type="text" id="titre" name="titre" required onChange={this.handleChangeTitreQuel} />
                 <textarea id="quel" name="quel"
                 rows="10" cols="40" onChange={this.handleChangeQuel} required></textarea>
