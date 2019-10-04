@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { withStyles } from "@material-ui/core";
 import Button from "../../components/CustomButtons/Button.jsx";
+import { firestore } from '../../../server/firebase/firebase';
 
 // @material-ui/icons
 import { Link } from "react-router-dom";
@@ -14,7 +15,53 @@ import { Link } from "react-router-dom";
 import footerStyle from "../../assets/jss/material-kit-react/components/footerStyle.jsx";
 
 class Footer extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      lien1: '',
+      lien2: '',
+      lien3: '',
+    }
+}
   
+  UNSAFE_componentWillMount () {
+    const lien1 = firestore.collection('liens').doc('lien1');
+    const lien2 = firestore.collection('liens').doc('lien2');
+    const lien3 = firestore.collection('liens').doc('lien3');
+  
+    lien1.get().then((doc) => {
+      if (doc.exists) {
+        return this.setState({lien1:doc.data() })
+      } else {
+        console("no sush document!");
+      }
+    }).catch(function(error) {
+      console.log("error getting document:", error);
+    });
+
+    lien2.get().then((doc) => {
+      if (doc.exists) {
+        return this.setState({lien2:doc.data() })
+      } else {
+        console("no sush document!");
+      }
+    }).catch(function(error) {
+      console.log("error getting document:", error);
+    });
+
+    lien3.get().then((doc) => {
+      if (doc.exists) {
+        return this.setState({lien3:doc.data() })
+      } else {
+        console("no sush document!");
+      }
+    }).catch(function(error) {
+      console.log("error getting document:", error);
+    });
+  
+  }
+
   render() {
     const { classes, whiteFont } = this.props;
     const footerClasses = classNames({
@@ -27,25 +74,25 @@ class Footer extends React.Component {
         <div className={classes.left}>
           <h4 className={classes.titre}>Liens utiles</h4>
           <Button
-            href="https://fr.wikipedia.org/wiki/Plante_m%C3%A9dicinale"
+            href={this.state.lien1.href}
             target="_blank"
             color="transparent"
           >
-          <p className={classes.NavLink}>Les plantes Médicinales</p>
+          <p className={classes.NavLink}>{this.state.lien1.titre}</p>
           </Button>
           <Button
-            href="https://www.maine-et-loire.fr/actualites/toutes-les-actualites/news/les-mauvaises-herbes-ca-nexiste-pas"
+            href={this.state.lien2.href}
             target="_blank"
             color="transparent"
           >
-          <p className={classes.NavLink}>Article sur La mauvaise Herbe</p>
+          <p className={classes.NavLink}>{this.state.lien2.titre}</p>
           </Button>
           <Button
-            href="https://fetedelanature.com/"
+            href={this.state.lien3.href}
             target="_blank"
             color="transparent"
           >
-          <p className={classes.NavLink}>Fête de la nature</p>
+          <p className={classes.NavLink}>{this.state.lien3.titre}</p>
           </Button>
         </div>
         <div className={classes.right}>

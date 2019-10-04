@@ -25,23 +25,7 @@ import lesActivitesStyle from "../../assets/jss/material-kit-react/views/lesActi
 import Lactivite from "./SectionLactivite.jsx";
 
 class LesActivites extends React.Component {
-  constructor(props) {
-    super(props)
-    this.childDiv = React.createRef()
-  }
 
-  componentDidMount = () => this.handleScroll()
-
-  componentDidUpdate = () => this.handleScroll()
-
-  handleScroll = () => {
-    const { index, selected } = this.props
-    if (index === selected) {
-      setTimeout(() => {
-        this.childDiv.current.scrollIntoView({ behavior: 'smooth' })
-      }, 500)
-    }
-  }
   render() {
     const { classes, ...rest } = this.props;
     return (

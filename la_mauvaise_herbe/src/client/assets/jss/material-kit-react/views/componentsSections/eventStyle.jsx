@@ -26,10 +26,19 @@ sections: {
     fontSize: "1.8vw",
   },
   p: {
-    fontWeight: "200",
+    fontWeight: "300",
     textAlign: "center",
-    fontSize: "1.2vw",
+    fontSize: "1.3vw",
   },
+  gras: {
+    fontWeight: "bold",
+  }, 
+  info: {
+    fontSize: "0.8vw",
+    fontWeight: "100",
+    textAlign: "center",
+  },
+
   image: {
     width: "100%",
     height: "100%",
