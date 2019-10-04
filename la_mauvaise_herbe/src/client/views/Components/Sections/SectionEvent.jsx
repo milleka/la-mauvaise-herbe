@@ -6,17 +6,16 @@ import withStyles from "@material-ui/core/styles/withStyles";
 
 import eventStyle from "../../../assets/jss/material-kit-react/views/componentsSections/eventStyle.jsx";
 import Carousel from "react-slick";
-import LocationOn from "@material-ui/icons/LocationOn";
 
 import GridContainer from "../../../components/Grid/GridContainer.jsx";
 import GridItem from "../../../components/Grid/GridItem.jsx";
 import Card from "../../../components/Card/Card.jsx";
-import image1 from "../../../assets/img/etangSaintNicolas.jpg";
-import image2 from "../../../assets/img/egliseEusebeGennes.jpg";
-import image3 from "../../../assets/img/borddelamaine.jpg";
 
-import Sectionreservation from "./SectionReservationEvents.jsx";
-
+import OneEvent from '../../../components/event/oneEvent.jsx';
+import TwoEvent from '../../../components/event/twoEvent.jsx';
+import ThreeEvent from '../../../components/event/threeEvent.jsx';
+import FourEvent from '../../../components/event/fourEvent.jsx';
+import FiveEvent from '../../../components/event/fiveEvent.jsx';
 
 
 class SectionEvent extends React.Component {
@@ -39,60 +38,11 @@ class SectionEvent extends React.Component {
                     <GridItem xs={12} sm={12} md={8} className={classes.marginAuto}>
                         <Card carousel>
                             <Carousel {...settings}>
-                                <div>
-                                    <div className={classes.img}>
-                                    <img
-                                        src={image1}
-                                        alt="First slide"
-                                        className={classes.image}
-                                    />
-                                    </div>
-                                    <div>
-                                        <h3 className={classes.h3}>Découverte de la botanique et des plantes médicinales</h3>
-                                        <h4 className={classes.h4}>
-                                        <LocationOn className="slick-icons" />
-                                        Parc des carrières Angers (étang saint Nicolas)
-                                        </h4>
-                                        <p className={classes.p}>Samedi 11 mai 9h30-12h30</p>
-                                        <Sectionreservation />
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className={classes.img}>
-                                    <img
-                                        src={image2}
-                                        alt="Second slide"
-                                        className={classes.image}
-                                        />
-                                    </div>
-                                    <div>
-                                        <h3 className={classes.h3}>Découverte de la botanique et des plantes médicinales</h3>
-                                        <h4 className={classes.h4}>
-                                        <LocationOn className="slick-icons" />
-                                        Eglise saint Eusèbe Gennes val de Loire
-                                        </h4>
-                                        <p className={classes.p}>Samedi 8 juin 9h30-12h30</p>
-                                        <Sectionreservation />
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className={classes.img}>
-                                    <img
-                                        src={image3}
-                                        alt="Third slide"
-                                        className={classes.image}
-                                    />
-                                    </div>
-                                    <div className={classes.info}>
-                                        <h3 className={classes.h3}>Découverte de la botanique et des plantes médicinales</h3>
-                                        <h4 className={classes.h4}>
-                                        <LocationOn className="slick-icons" />
-                                        bord de la loire Bouchemaine
-                                        </h4>
-                                        <p className={classes.p}>Samedi 15 aout 9h30-12h30</p>
-                                        <Sectionreservation />
-                                    </div>
-                                </div>
+                                <OneEvent/>
+                                <TwoEvent/>
+                                <ThreeEvent/>
+                                <FourEvent/>
+                                <FiveEvent/>
                             </Carousel>
                         </Card>
                     </GridItem>

@@ -20,7 +20,6 @@ import HeaderLinks from "../../components/Header/HeaderLinks.jsx";
 
 import SectionKesako from "./Sections/SectionKesako.jsx";
 import SectionEvent from "./Sections/SectionEvent.jsx";
-import SectionActivites from "./Sections/SectionActivitesHome.jsx";
 import SectionContact from "./Sections/SectionContact.jsx";
 
 import logo from '../../assets/img/lamauvaiseherbe.png';
@@ -94,7 +93,6 @@ componentDidMount= async () => {
         <div className={classNames(classes.main, classes.mainRaised)}>
           <SectionKesako />
           <SectionEvent />
-          <SectionActivites/>
           <br/>
           <br/>
         </div>

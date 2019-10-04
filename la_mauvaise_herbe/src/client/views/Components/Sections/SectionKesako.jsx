@@ -97,7 +97,7 @@ class SectionKesako extends React.Component {
                     <h2>Kesako</h2>
                 </div>
                 <div className={classes.kesako}>
-                    <img className={classes.image} src={this.state.url} alt="Matthieu chassaing, animateur des animations la mauvaise herbe"/>
+                    <img className={classes.image} src={this.state.url} alt="Matthieu chassaing, animateur des randonnées de la mauvaise herbe"/>
                     <div className={classes.question}>
                         <div className={classes.titre}>
                             <Filtervintage className={classes.signe}/>
