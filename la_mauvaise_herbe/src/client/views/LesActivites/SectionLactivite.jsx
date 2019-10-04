@@ -1,16 +1,100 @@
-import React from "react";
-
-import PropTypes from "prop-types";
-
-import withStyles from "@material-ui/core/styles/withStyles";
+import React, { useState, useEffect } from "react";
+import firebase from '../../../server/firebase/firebase';
 
 
-import lactiviteStyle from "../../assets/jss/material-kit-react/views/componentsSections/lactiviteStyle.jsx";
-import Photo from "../../assets/img/cueillettes.jpg";
-import Reservation from "./SectionReservationActivite.jsx";
+import Reservation from './SectionReservationActivite.jsx';
 
 
-class SectionLactivite extends React.Component {
+import styles from "../../assets/jss/material-kit-react/views/componentsSections/lactiviteStyle.module.css";
+
+
+const storageRef = firebase.storage().ref("activites");
+
+const useActivitesPhoto = () => {
+
+    const[photo, setPhoto] = useState([]);
+
+    useEffect(() => {
+        storageRef.listAll().then((value) => {
+            displayImage(value.items);
+        });
+    }, [])
+
+    const displayImage = (test) => {
+        let phototab = [];
+        test.forEach((image, index) => {
+            image.getDownloadURL().then(function(url) {
+                phototab.push(url)
+                console.log(url);
+                if(index === test.length-1) {
+                    setPhoto(phototab);
+                }
+            }).catch(function(error) {
+            })
+        });
+    }
+
+    return photo;
+}
+
+const useActivites = () => {
+    const [ activites, setActivites ] = useState([])
+
+    useEffect(() => {
+        firebase
+            .firestore()
+            .collection('activités')
+            .onSnapshot((snapshot) => {
+                const newActivites = snapshot.docs.map((doc)=> ({
+                    id : doc.id,
+                    ...doc.data()
+                }))
+
+                setActivites(newActivites);
+            })
+        
+    }, [])
+    return activites
+}
+
+const SectionLactivite = () => {
+
+    const activites = useActivites();
+    const activitesPhoto = useActivitesPhoto();
+
+    return (
+            activites.map((activite,i) => (
+                <div key={activite.id} className={styles.container}>
+                <div className={styles.bloc}>
+                    <h3 className={styles.title}>{activite.titre}</h3>
+                    <div className={styles.ligne}>
+                        <img className={styles.image} src={activitesPhoto.length ? activitesPhoto[i] : null} alt="plantes médicinales sauvages" />
+                        <div className={styles.colonne}>
+                            <h4 className={styles.titre}>Activites:</h4>
+                            <p><strong>{activite.phraseAccr}</strong>
+                            {activite.description} 
+                            </p>
+                            <div className={styles.ligne2}>
+                                <div className={styles.left}>
+                                    <div className={styles.duree}>
+                                        <h5 className={styles.bold}>Durée:</h5>
+                                        <p className={styles.valeur}>{activite.duree}</p>
+                                    </div>                                   
+                                </div>
+                                <div className={styles.right}>
+                                    <p>Vous voulez poser une question ?</p>
+                                    <Reservation className={styles.bouton}/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            ))
+    )
+}
+
+/*class SectionLactivite extends React.Component {
     oneActivity= () => {
         const { classes } = this.props;
         var anim = []
@@ -57,10 +141,6 @@ class SectionLactivite extends React.Component {
             </div>
         );
     }
-}
-
-SectionLactivite.propTypes = {
-    classes: PropTypes.object
-  };
+}*/
   
-  export default withStyles(lactiviteStyle)(SectionLactivite);
+  export default (SectionLactivite);

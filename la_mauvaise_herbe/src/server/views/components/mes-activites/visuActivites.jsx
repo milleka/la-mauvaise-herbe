@@ -55,7 +55,7 @@ const useActivites = () => {
 const ActivitesList = () => {
 
     const activites = useActivites();
-    const acitivitesPhoto = useActivitesPhoto();
+    const activitesPhoto = useActivitesPhoto();
 
     return (
             activites.map((activite,i) => (
@@ -63,7 +63,7 @@ const ActivitesList = () => {
                 <div className={styles.bloc}>
                     <h3 className={styles.title}>{activite.titre}</h3>
                     <div className={styles.ligne}>
-                        <img className={styles.image} src={acitivitesPhoto.length ? acitivitesPhoto[i] : null} alt="plantes médicinales sauvages" />
+                        <img className={styles.image} src={activitesPhoto.length ? activitesPhoto[i] : null} alt="plantes médicinales sauvages" />
                         <div className={styles.colonne}>
                             <h4 className={styles.titre}>Activites:</h4>
                             <p><strong>{activite.phraseAccr}</strong>
