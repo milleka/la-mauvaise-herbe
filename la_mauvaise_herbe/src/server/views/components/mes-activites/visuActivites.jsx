@@ -52,6 +52,19 @@ const useActivites = () => {
     return activites
 }
 
+/*const ActivitesList = () => {
+    const [ activites, setActivites ] = useState([])
+    const resultActivites = useActivites(activites);
+    const activitesPhoto = useActivitesPhoto();
+    console.log(resultActivites)
+
+    const removeData = activite => {
+        const newState = resultActivites.filter(data => {
+        return data.id !== activite.id;
+        });
+       setActivites(newState);
+    }; + insérer un onClick= () => {removeData} dans le bouton supprimer*/
+
 const ActivitesList = () => {
 
     const activites = useActivites();

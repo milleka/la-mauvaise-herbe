@@ -58,7 +58,7 @@ class LesActivites extends React.Component {
             <div className={classes.title}>
                 <h2>Principe</h2>
             </div>
-            <p className={classes.texte}><strong>Réserver</strong> une activité , une date, et <strong>Découvrer</strong> les plantes médicinales qui vous entourent !</p>
+            <p className={classes.texte}><strong>Découvrer</strong> les différents services que je vous proposerais lors d'évènements ! </p>
             <Lactivite />
         </div>
         <Footer />

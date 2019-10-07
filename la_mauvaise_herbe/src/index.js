@@ -17,8 +17,9 @@
 */
 import React from "react";
 import ReactDOM from "react-dom";
-import { createBrowserHistory } from "history";
-import { Router, Route, Switch } from "react-router-dom";
+//import { createBrowserHistory } from "history";
+import { /*Router,*/ Route, Switch, BrowserRouter } from "react-router-dom";
+import _ from "lodash";
 
 import "client/assets/scss/material-kit-react.scss?v=1.7.0";
 
@@ -33,23 +34,54 @@ import Prochainevent from "./server/views/components/prochain-event/prochaineven
 import Mesactivites from "./server/views/components/mes-activites/mesactivites.jsx";
 import Mesactu from "./server/views/components/mes-actu/mesactu.jsx";
 
+import { auth } from "./server/firebase/firebase"
+import withAuthProtection from "./server/firebase/withauthprotection";
 
+const ProtectedProfile = withAuthProtection("/")(Dashboard);
+const ProtectedProfile2 = withAuthProtection("/")(Infogenerale);
+const ProtectedProfile3 = withAuthProtection("/")(Prochainevent);
+const ProtectedProfile4 = withAuthProtection("/")(Mesactivites);
+const ProtectedProfile5 = withAuthProtection("/")(Mesactu);
 
-var hist = createBrowserHistory();
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      me: auth.currentUser
+    };
+  }
 
-ReactDOM.render(
-  <Router history={hist}>
-    <Switch>
-      <Route path="/activités" component={Activités}/>
-      <Route path="/actualités" component={Actualités}/>
-      <Route path="/admin" component={Admin}/>
-      <Route path="/dashboard" component={Dashboard}/>
-      <Route path="/infogenerale" component={Infogenerale}/>
-      <Route path="/prochainevent" component={Prochainevent}/>
-      <Route path="/mesactivites" component={Mesactivites}/>
-      <Route path="/mesactu" component={Mesactu}/>
-      <Route path="/" component={PageAccueil} />
-    </Switch>
-  </Router>,
-  document.getElementById("root")
-);
+  componentDidMount() {
+    auth.onAuthStateChanged(me => {
+      this.setState({ me });
+    });
+  }
+
+  render() {
+    const { me } = this.state;
+    const email = _.get(me, "email");
+    return (
+      <BrowserRouter>
+        <Switch>
+            <Route path="/activités" component={Activités}/>
+            <Route path="/actualités" component={Actualités}/>
+            <Route path="/admin" component={Admin}/>
+            <Route path="/dashboard" render={props => (
+              <ProtectedProfile {...props} me={me} displayName={email}/> )} />
+            <Route path="/infogenerale" render={props => (
+              <ProtectedProfile2 {...props} me={me} displayName={email}/> )}/> />
+            <Route path="/prochainevent" render={props => (
+              <ProtectedProfile3 {...props} me={me} displayName={email}/> )}/> />
+            <Route path="/mesactivites" render={props => (
+              <ProtectedProfile4 {...props} me={me} displayName={email}/> )}/> />/>
+            <Route path="/mesactu" render={props => (
+              <ProtectedProfile5 {...props} me={me} displayName={email}/> )}/> />/>
+            <Route path="/" component={PageAccueil} />
+        </Switch>
+      </BrowserRouter>
+    );
+  }
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
