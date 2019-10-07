@@ -23,7 +23,7 @@ const useActivitesPhoto = () => {
     const displayImage = (test) => {
         let phototab = [];
         test.forEach((image, index) => {
-            image.getDownloadURL().then(function(url) {
+            image.getDownloadURL().then(function (url) {
                 phototab.push(url)
                 console.log(url);
                 if(index === test.length-1) {

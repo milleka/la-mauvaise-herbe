@@ -66,7 +66,7 @@ class firstevent extends React.Component {
     e.preventDefault();
     const {titre, lieu, tarif, date, time, duree} = this.state;
     
-      
+
     this.ref.update({
       titre,
       lieu,
