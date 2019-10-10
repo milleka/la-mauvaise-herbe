@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import firebase from '../../../server/firebase/firebase';
-import classes from "../../assets/jss/material-kit-react/views/componentsSections/lactuStyle.module.css";
+import firebase from '../../../firebase/firebase';
+import classes from "../../../assets/jss/mes-actu/mesactuStyle.module.css";
+import { Button } from "@material-ui/core";
 
 const storageRef = firebase.storage().ref("actualite");
 
@@ -64,10 +65,10 @@ const useActualites = () => {
        setActivites(newState);
     }; + insérer un onClick= () => {removeData} dans le bouton supprimer*/
 
-const ActuList = () => {
+const ActualitesList = () => {
 
-     const actualites = useActualites ();
-     const actualitesPhoto = useActualitesPhoto();
+    const actualites = useActualites();
+    const actualitesPhoto = useActualitesPhoto();
 
     return (
             actualites.map((actualite,i) => (
@@ -80,10 +81,11 @@ const ActuList = () => {
                             <p className={classes.texte}>{actualite.description}</p>
                     </div>
                 </a>
+                <Button className={classes.bouton}>Supprimer</Button>
                 </div>
                 </div>
             ))
     )
 }
 
-export default ActuList;
+export default ActualitesList;

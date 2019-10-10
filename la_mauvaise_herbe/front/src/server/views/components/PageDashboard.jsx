@@ -20,9 +20,9 @@ class PageDashboard extends React.Component {
             <li><strong>Modifier toutes tes infos générales</strong>, changer le fond de ta page d'accueil,
                changer ton kezako et sa photo, et les liens utiles de ton pied de page.</li>
             <li><strong>Modifier tes événements à venir</strong>, tu pourras choisir la photo, le titre,
-               le lieu , la date et l'heure.</li>
+               le lieu ,la durée, le tarif, la date et l'heure.</li>
             <li><strong>Modifier, supprimer et ajouter tes activités</strong>, changer ton titre, ta phrase d'accroche,
-               ton texte explicatif, ton tarif et la durée de l'activité.</li>
+               ton texte explicatif, la durée.</li>
             <li><strong>Modifier, supprimer et ajouter tes actualités</strong>, changer ton titre, ton texte d'explication,
                ainsi qu'un lien vers l'article choisi.</li>
           </ul>
