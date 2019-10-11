@@ -1,8 +1,8 @@
 import { container, title } from "../../../material-kit-react.jsx";
 
-import modalStyle from "../../../material-kit-react/modalStyle.jsx";
-import tooltipsStyle from "../../../material-kit-react/tooltipsStyle.jsx";
-import popoverStyles from "../../../material-kit-react/popoverStyles.jsx";
+import modalStyle from "../../modalStyle.jsx";
+import tooltipsStyle from "../../tooltipsStyle.jsx";
+import popoverStyles from "../../popoverStyles.jsx";
 
 const reservationStyles = {
   section: {
@@ -62,6 +62,14 @@ const reservationStyles = {
     border: "none",
     borderBottom: "2px solid rgb(0, 77, 0)",
     borderRadius: "4px",
+  },
+
+  text1: {
+    margin: "5px",
+    border: "none",
+    borderBottom: "2px solid rgb(0, 77, 0)",
+    borderRadius: "4px",
+    height: "60px",
   },
 
   reponse1: {

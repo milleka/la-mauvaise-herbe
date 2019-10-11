@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 
 import withStyles from "@material-ui/core/styles/withStyles";
 
-import reservationStyle from "../../../assets/jss/material-kit-react/views/componentsSections/forminforeservaStyle.jsx";
+import reservationStyle from "../../assets/jss/material-kit-react/views/componentsSections/forminforeservaStyle.jsx";
 import LibraryBooks from "@material-ui/icons/LibraryBooks";
-import Button from "../../../components/CustomButtons/Button.jsx";
+import Button from "../../components/CustomButtons/Button.jsx";
 import Dialog from "@material-ui/core/Dialog";
 import Slide from "@material-ui/core/Slide";
 import DialogTitle from "@material-ui/core/DialogTitle";
@@ -25,16 +25,16 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   
   Transition.displayName = "Transition";
 
-class SectionReservation extends React.Component {
+class SectionInfo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
           classicModal: false,
-          place: '',
-          event: '',
+          titre: '',
           nom: '',
           prenom: '',
           email:'',
+          message: '',
           reponse:''
 
         };
@@ -62,20 +62,20 @@ onChange = (e) => {
 
 handleSubmit1(e){
   e.preventDefault();
-  const place = this.state.place;
-  const event = this.state.event;
+  const titre = this.state.titre;
   const nom = this.state.nom;
   const prenom = this.state.prenom;
   const email = this.state.email;
+  const message = this.state.message;
   axios({
       method: "POST", 
-      url:"http://localhost:3002/send1", 
+      url:"http://localhost:3002/send2", 
       data: {
-          place: place,
-          event: event,
+          titre: titre,
           nom: nom,
           prenom: prenom,   
-          email: email,  
+          email: email,
+          message: message,
       }
   }).then((response)=>{
       if (response.data.msg === 'success'){
@@ -91,17 +91,17 @@ handleSubmit1(e){
 
 resetForm(){
   this.setState({
-    place: '',
-    event: '',
+    titre: '',
     nom: '',
     prenom: '',
     email:'',
+    message: '',
   })
 }
 
     render() {
         const { classes } = this.props;
-        const {place, event, nom, prenom, email, reponse} = this.state
+        const {titre, nom, prenom, email, message, reponse} = this.state
         return (
         <div>
             <Button
@@ -110,7 +110,7 @@ resetForm(){
                 onClick={() => this.handleClickOpen("classicModal")}
             >
                 <LibraryBooks className={classes.icon} />
-                Réservation
+                Information
             </Button>
             <form id="contact-form1" onSubmit={this.handleSubmit1.bind(this)} method="POST">
             <Dialog
@@ -139,32 +139,27 @@ resetForm(){
                     >
                         <Close className={classes.modalClose} />
                     </IconButton>
-                    <h4 className={classes.modalTitle}>Réserver pour l'événement !</h4>
+                    <h4 className={classes.modalTitle}>demande d'information !</h4>
                 </DialogTitle>
                   <DialogContent
                       id="classic-modal-slide-description"
                       className={classes.modalBody}
                   >
                     <div className={classes.column}>
-                      <label className={classes.lab} htmlFor="place">Nombre de participant:</label>
-                      <input 
-                        className={classes.number}
-                        type="number" id="place" name="place"
-                        min="1" required
-                        value={place} onChange={this.onChange}
-                      />
-                      <label className={classes.lab} htmlFor="event">Titre de l'évènement:</label>
+                      <label className={classes.lab} htmlFor="titre">Titre de l'activité:</label>
                       <input
                         className={classes.text}
-                        id="event"
-                        name="event"
-                        value={event} onChange={this.onChange}
+                        id="titre"
+                        name="titre"
+                        require
+                        value={titre} onChange={this.onChange}
                       />
                       <label className={classes.lab} htmlFor="nom">Nom:</label>
                       <input
                         className={classes.text}
                         id="nom"
                         name="nom"
+                        require
                         value={nom} onChange={this.onChange}
                       />
                       <label className={classes.lab} htmlFor="prenom">Prénom:</label>
@@ -172,6 +167,7 @@ resetForm(){
                         className={classes.text}
                         id="prenom"
                         name="prenom"
+                        require
                         value={prenom} onChange={this.onChange}
                       />
                       <label className={classes.lab} htmlFor="email">E-mail:</label>
@@ -179,8 +175,13 @@ resetForm(){
                         className={classes.text}
                         id="email"
                         name="email"
+                        require
                         value={email} onChange={this.onChange}
                       />
+                      <label className={classes.lab} htmlFor="message">Message:</label>
+                      <textarea
+                       className={classes.text1} name="message" id="message"
+                       require onChange={this.onChange} value={message}></textarea>
                     </div>
                   </DialogContent>
                   <div className={classes.reponse1}>{reponse}</div>
@@ -196,8 +197,8 @@ resetForm(){
     }
 }
 
-SectionReservation.propTypes = {
+SectionInfo.propTypes = {
     classes: PropTypes.object
   };
   
-  export default withStyles(reservationStyle)(SectionReservation);
+  export default withStyles(reservationStyle)(SectionInfo);
