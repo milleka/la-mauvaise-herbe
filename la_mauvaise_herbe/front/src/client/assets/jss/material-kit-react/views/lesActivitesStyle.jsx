@@ -44,6 +44,9 @@ const lesActivitesStyle = {
       color: "black",
       fontSize: "1.2em",
       textAlign: "center",
+  },
+  question: {
+    textAlign: "center",
   }
 };
 

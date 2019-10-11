@@ -54,6 +54,12 @@ const contactStyle = {
         marginBottom: "0px",
         textAlign: "center",
         fontSize: "1.5vw",
+        "@media (max-width: 768px)": {
+            fontSize: "2vw",
+          },
+          "@media (max-width: 425px)": {
+            fontSize: "3.5vw",
+          },
     },
     cardFooter: {
         paddingTop: "0rem",

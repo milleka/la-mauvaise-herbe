@@ -17,6 +17,8 @@ import ThreeEvent from '../../../components/event/threeEvent.jsx';
 import FourEvent from '../../../components/event/fourEvent.jsx';
 import FiveEvent from '../../../components/event/fiveEvent.jsx';
 
+import Sectionreservation from "./SectionReservationEvents.jsx";
+
 
 class SectionEvent extends React.Component {
     render() {
@@ -45,6 +47,8 @@ class SectionEvent extends React.Component {
                                 <FiveEvent/>
                             </Carousel>
                         </Card>
+                    <p>Vous souhaitez faire une réservation pour un évènement ? cliquez-dessous !</p>
+                    <Sectionreservation />
                     </GridItem>
                 </GridContainer>
             </div>

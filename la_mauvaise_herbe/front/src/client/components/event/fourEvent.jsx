@@ -2,7 +2,6 @@ import React from "react";
 
 import eventStyle from "../../assets/jss/material-kit-react/views/componentsSections/eventStyle.jsx";
 
-import Sectionreservation from "../../views/Components/Sections/SectionReservationEvents.jsx";
 import LocationOn from "@material-ui/icons/LocationOn";
 import PropTypes from "prop-types";
 
@@ -79,7 +78,6 @@ UNSAFE_componentWillMount () {
                     <p className={classes.p}><span className={classes.gras}>Date:</span> {this.state.infosevent4.date} <span className={classes.gras}>Heure:</span> {this.state.infosevent4.time}</p>
                     <p className={classes.p}><span className={classes.gras}>Durée:</span> {this.state.infosevent4.duree}</p>
                     <p className={classes.info}>(la date est présentée sous la forme année-mois-jour)</p>
-                    <Sectionreservation />
                 </div>
             </div>
         );

@@ -49,12 +49,6 @@ const footerStyle = {
     padding: "0px",
     width: "auto"
   },
-  icon: {
-    width: "18px",
-    height: "18px",
-    position: "relative",
-    top: "3px"
-  },
   bloc: {
     display: "flex",
     justifyContent: "space-around",
@@ -66,13 +60,16 @@ const footerStyle = {
   },
   NavLink: {
     textAlign: "center",
-    fontSize: "0.8vw",
+    fontSize: "0.9vw",
     textDecoration: "none",
     color: "rgb(153, 61, 0)",
     marginBottom: "0.1em",
     "&:hover,&:focus": {
       color: "rgb(153, 61, 0)",
       fontWeight: "700",
+    },
+    "@media (max-width: 425px)": {
+      fontSize: "2vw",
     },
 
   },
@@ -81,6 +78,6 @@ const footerStyle = {
   },
   espace: {
     marginBottom: "1em",
-  }
+  },
 };
 export default footerStyle;
