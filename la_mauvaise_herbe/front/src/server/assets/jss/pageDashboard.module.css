@@ -1,0 +1,68 @@
+.head1 {
+    background-color: rgb(0, 77, 0); 
+    padding: 4vh 0;
+}
+
+.head1 h1 {
+    text-align: center;
+    margin: 0;
+    color: white;
+    font-weight: 600;
+} 
+
+.head1 h3 {
+    text-align: center;
+    margin: 0;
+    color: white;
+}
+
+.head2 {
+    background-color: rgb(134, 179, 0);
+    display: flex;
+    justify-content: center;
+}
+
+.head2 ul {
+    padding: 2vh 0;
+    width: 100%;
+    list-style: none; 
+    display: flex;
+    justify-content: space-around;
+}
+
+.head li, a {
+    color: white;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.head li, a:hover {
+    color: rgb(153, 61, 0);
+    transition: color 0.5s ease;
+}
+
+.intro {
+    height: 60vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro p {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.intro ul {
+    width: 60%;
+}
+
+.intro strong {
+    font-weight: 800;
+}
+
+.intro li {
+    font-size: 1.2em;
+    padding: 0.5em 0;
+}

@@ -1,0 +1,4 @@
+/front/node_modules
+/front/.env.dev
+/back/node_modules
+/back/config.js
