@@ -32,6 +32,7 @@ import Infogenerale from "./server/views/components/info-generale/infogenerale.j
 import Prochainevent from "./server/views/components/prochain-event/prochainevent.jsx";
 import Mesactivites from "./server/views/components/mes-activites/mesactivites.jsx";
 import Mesactu from "./server/views/components/mes-actu/mesactu.jsx";
+import Mentions from "./client/views/Components/MentionsLegale";
 
 import { auth } from "./server/firebase/firebase"
 import withAuthProtection from "./server/firebase/withauthprotection";
@@ -64,6 +65,7 @@ class App extends React.Component {
         <Switch>
             <Route path="/activités" component={Activités}/>
             <Route path="/actualités" component={Actualités}/>
+            <Route path="/mentions" component={Mentions}/>
             <Route path="/admin" component={Admin}/>
             <Route path="/dashboard" render={props => (
               <ProtectedProfile {...props} me={me} displayName={email}/> )} />

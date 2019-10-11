@@ -49,7 +49,7 @@ const pageAccueilStyle = {
   },
   textCenter: {
     textAlign: "center"
-  }
+  },
 };
 
 export default pageAccueilStyle;
