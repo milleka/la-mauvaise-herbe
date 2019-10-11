@@ -39,6 +39,40 @@ const reservationStyles = {
     marginBottom : "17px",
     paddingTop: "27px",
   },
+  number: {
+    textAlign: "center",
+    marginLeft: "5px",
+    width: "60px",
+    borderRadius: "10px",
+    border: "1px solid rgb(0, 77, 0)",
+    padding: "5px",
+  },
+
+  column: {
+    display: "flex",
+    flexDirection: "column",
+  },
+
+  lab :{
+    margin: "5px",
+  },
+
+  text: {
+    margin: "5px",
+    border: "none",
+    borderBottom: "2px solid rgb(0, 77, 0)",
+    borderRadius: "4px",
+  },
+
+  reponse1: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: "5px",
+    fontWeight: "700",
+    backgroundColor: "rgb(0, 77, 0)",
+    color: "white",
+  },
   ...tooltipsStyle,
   ...popoverStyles
 };

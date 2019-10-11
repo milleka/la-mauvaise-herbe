@@ -14,11 +14,10 @@ import IconButton from "@material-ui/core/IconButton";
 import Close from "@material-ui/icons/Close";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogActions from "@material-ui/core/DialogActions";
-import CustomInput from "../../../components/CustomInput/CustomInput.jsx";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import People from "@material-ui/icons/Person";
-import Personne from '@material-ui/icons/PersonOutline';
-import Email from '@material-ui/icons/Email';
+
+
+import axios from 'axios';
+
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="down" ref={ref} {...props} />;
@@ -31,8 +30,18 @@ class SectionReservation extends React.Component {
         super(props);
         this.state = {
           classicModal: false,
+          place: '',
+          event: '',
+          nom: '',
+          prenom: '',
+          email:'',
+          reponse:''
+
         };
       }
+
+      //ouverture modal
+
     handleClickOpen(modal) {
         var x = [];
         x[modal] = true;
@@ -43,8 +52,56 @@ class SectionReservation extends React.Component {
         x[modal] = false;
         this.setState(x);
       }
+
+//envoie email
+onChange = (e) => {
+  const state = this.state
+  state[e.target.name] = e.target.value;
+  this.setState(state);
+}
+
+handleSubmit1(e){
+  e.preventDefault();
+  const place = this.state.place;
+  const event = this.state.event;
+  const nom = this.state.nom;
+  const prenom = this.state.prenom;
+  const email = this.state.email;
+  axios({
+      method: "POST", 
+      url:"http://localhost:3002/send1", 
+      data: {
+          place: place,
+          event: event,
+          nom: nom,
+          prenom: prenom,   
+          email: email,  
+      }
+  }).then((response)=>{
+      if (response.data.msg === 'success'){
+        this.setState({
+          reponse: "Message envoyé avec succès !"
+        })
+        this.resetForm()
+      }else if(response.data.msg === 'fail'){
+          alert("Message failed to send.")
+      }
+  })
+}
+
+resetForm(){
+  this.setState({
+    place: '',
+    event: '',
+    nom: '',
+    prenom: '',
+    email:'',
+  })
+}
+
     render() {
         const { classes } = this.props;
+        const {place, event, nom, prenom, email, reponse} = this.state
         return (
         <div>
             <Button
@@ -55,6 +112,7 @@ class SectionReservation extends React.Component {
                 <LibraryBooks className={classes.icon} />
                 Réservation
             </Button>
+            <form id="contact-form1" onSubmit={this.handleSubmit1.bind(this)} method="POST">
             <Dialog
                 classes={{
                     root: classes.center,
@@ -83,61 +141,56 @@ class SectionReservation extends React.Component {
                     </IconButton>
                     <h4 className={classes.modalTitle}>Réserver pour l'événement !</h4>
                 </DialogTitle>
-                <form>
                   <DialogContent
                       id="classic-modal-slide-description"
                       className={classes.modalBody}
                   >
-                    <CustomInput
-                      labelText="Nom"
-                      id="material"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <People />
-                          </InputAdornment>
-                        )
-                      }}
-                    />
-                      <CustomInput
-                      labelText="Prénom"
-                      id="material"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <Personne />
-                          </InputAdornment>
-                        )
-                      }}
-                    />
-                      <CustomInput
-                      labelText="Email"
-                      id="material"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <Email />
-                          </InputAdornment>
-                        )
-                      }}
-                    />
+                    <div className={classes.column}>
+                      <label className={classes.lab} htmlFor="place">Nombre de participant:</label>
+                      <input 
+                        className={classes.number}
+                        type="number" id="place" name="place"
+                        min="1" required
+                        value={place} onChange={this.onChange}
+                      />
+                      <label className={classes.lab} htmlFor="event">Titre de l'évènement:</label>
+                      <input
+                        className={classes.text}
+                        id="event"
+                        name="event"
+                        value={event} onChange={this.onChange}
+                      />
+                      <label className={classes.lab} htmlFor="nom">Nom:</label>
+                      <input
+                        className={classes.text}
+                        id="nom"
+                        name="nom"
+                        value={nom} onChange={this.onChange}
+                      />
+                      <label className={classes.lab} htmlFor="prenom">Prénom:</label>
+                      <input
+                        className={classes.text}
+                        id="prenom"
+                        name="prenom"
+                        value={prenom} onChange={this.onChange}
+                      />
+                      <label className={classes.lab} htmlFor="email">E-mail:</label>
+                      <input
+                        className={classes.text}
+                        id="email"
+                        name="email"
+                        value={email} onChange={this.onChange}
+                      />
+                    </div>
                   </DialogContent>
+                  <div className={classes.reponse1}>{reponse}</div>
                   <DialogActions className={classes.modalFooter}>
-                      <Button color="transparent" simple>
+                      <Button onClick={this.handleSubmit1.bind(this)} color="transparent" simple>
                           Envoyer
                       </Button>
                   </DialogActions>
-                </form>
             </Dialog>
+            </form>
         </div>
         );
     }
