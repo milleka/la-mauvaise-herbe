@@ -28,8 +28,9 @@ router1.post('/send1', (req, res, next) => {
     var prenom = req.body.prenom
     var email = req.body.email
     var content = `nom: ${nom} \n prenom: ${prenom} \n email: ${email} \n Une réservation pour ${place} personne(s) à été faite pour l'évènement ${event}.`
-    var content2 = `Bonjour ${nom } ${prenom} \n La Mauvaise herbe confirme votre réservation pour ${place} personne(s) pour l'évènement "${event}"
-    Pour toute informations complémentaires, veuillez nous écrire à l'adresse : lamauvaiseherbe49@gmail.com.`
+    var content2 = `Bonjour ${nom } ${prenom} \n La Mauvaise herbe la  prise en compte de votre demande de réservation 
+    pour ${place} personne(s) pour l'évènement "${event}".
+    Pour toute informations complémentaires, vous pouvez nous contacter à l'adresse : lamauvaiseherbe49@gmail.com.`
   
     var mail = {
       from: email, 
