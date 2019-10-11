@@ -23,6 +23,7 @@ import logo from '../../assets/img/lamauvaiseherbe.png';
 import lesActivitesStyle from "../../assets/jss/material-kit-react/views/lesActivitesStyle.jsx";
 
 import Lactivite from "./SectionLactivite.jsx";
+import Information from './SectionInformationActivite.jsx';
 
 class LesActivites extends React.Component {
 
@@ -59,6 +60,8 @@ class LesActivites extends React.Component {
                 <h2>Principe</h2>
             </div>
             <p className={classes.texte}><strong>Découvrer</strong> les différents services que je vous proposerais lors d'évènements ! </p>
+            <p className={classes.question}>Vous voulez poser une question plus précise sur une activité ? cliquez-dessous !</p>
+            <Information className={classes.bouton}/>
             <Lactivite />
         </div>
         <Footer />

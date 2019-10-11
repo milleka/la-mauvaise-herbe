@@ -151,7 +151,7 @@ resetForm(){
                         className={classes.text}
                         id="titre"
                         name="titre"
-                        require
+                        require="true"
                         value={titre} onChange={this.onChange}
                       />
                       <label className={classes.lab} htmlFor="nom">Nom:</label>
@@ -159,7 +159,7 @@ resetForm(){
                         className={classes.text}
                         id="nom"
                         name="nom"
-                        require
+                        require="true"
                         value={nom} onChange={this.onChange}
                       />
                       <label className={classes.lab} htmlFor="prenom">Prénom:</label>
@@ -167,7 +167,7 @@ resetForm(){
                         className={classes.text}
                         id="prenom"
                         name="prenom"
-                        require
+                        require="true"
                         value={prenom} onChange={this.onChange}
                       />
                       <label className={classes.lab} htmlFor="email">E-mail:</label>
@@ -175,13 +175,13 @@ resetForm(){
                         className={classes.text}
                         id="email"
                         name="email"
-                        require
+                        require="true"
                         value={email} onChange={this.onChange}
                       />
                       <label className={classes.lab} htmlFor="message">Message:</label>
                       <textarea
                        className={classes.text1} name="message" id="message"
-                       require onChange={this.onChange} value={message}></textarea>
+                       require="true" onChange={this.onChange} value={message}></textarea>
                     </div>
                   </DialogContent>
                   <div className={classes.reponse1}>{reponse}</div>
