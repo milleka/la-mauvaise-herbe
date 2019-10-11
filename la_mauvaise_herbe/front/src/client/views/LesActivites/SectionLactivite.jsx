@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import firebase from '../../../server/firebase/firebase';
 
 
-import Reservation from './SectionReservationActivite.jsx';
+import Information from './SectionInformationActivite.jsx';
 
 
 import styles from "../../assets/jss/material-kit-react/views/componentsSections/lactiviteStyle.module.css";
@@ -81,7 +81,7 @@ const SectionLactivite = () => {
                                 </div>
                                 <div className={styles.right}>
                                     <p>Vous voulez poser une question ?</p>
-                                    <Reservation className={styles.bouton}/>
+                                    <Information className={styles.bouton}/>
                                 </div>
                             </div>
                         </div>

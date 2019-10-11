@@ -54,7 +54,7 @@ class Actualités extends React.Component {
         </Parallax>
         <div className={classNames(classes.main, classes.mainRaised)}>
             <div className={classes.title}>
-                <h2>Informations</h2>
+                <h2>Mes actu</h2>
             </div>
             <Lactu/>
             <br/>
