@@ -19,7 +19,6 @@ const useActualitesPhoto = () => {
         test.forEach((image, index) => {
             image.getDownloadURL().then(function(url) {
                 phototab.push(url)
-                console.log(url);
                 if(index === test.length-1) {
                     setPhoto(phototab);
                 }

@@ -8,13 +8,12 @@ import Reservation from './SectionReservationActivite.jsx';
 import styles from "../../assets/jss/material-kit-react/views/componentsSections/lactiviteStyle.module.css";
 
 
-const storageRef = firebase.storage().ref("activites");
-
 const useActivitesPhoto = () => {
 
     const[photo, setPhoto] = useState([]);
 
     useEffect(() => {
+        const storageRef = firebase.storage().ref("activites");
         storageRef.listAll().then((value) => {
             displayImage(value.items);
         });
@@ -23,9 +22,8 @@ const useActivitesPhoto = () => {
     const displayImage = (test) => {
         let phototab = [];
         test.forEach((image, index) => {
-            image.getDownloadURL().then(function (url) {
+            image.getDownloadURL().then((url) => {
                 phototab.push(url)
-                console.log(url);
                 if(index === test.length-1) {
                     setPhoto(phototab);
                 }
@@ -68,7 +66,7 @@ const SectionLactivite = () => {
                 <div className={styles.bloc}>
                     <h3 className={styles.title}>{activite.titre}</h3>
                     <div className={styles.ligne}>
-                        <img className={styles.image} src={activitesPhoto.length ? activitesPhoto[i] : null} alt="plantes médicinales sauvages" />
+                        <img className={styles.image} src={activitesPhoto[i]} alt="plantes médicinales sauvages" />
                         <div className={styles.colonne}>
                             <h4 className={styles.titre}>Activites:</h4>
                             <p><strong>{activite.phraseAccr}</strong>
