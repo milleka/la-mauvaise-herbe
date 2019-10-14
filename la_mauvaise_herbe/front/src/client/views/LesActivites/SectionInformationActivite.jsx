@@ -69,7 +69,7 @@ handleSubmit1(e){
   const message = this.state.message;
   axios({
       method: "POST", 
-      url:"http://localhost:3002/send2", 
+      url:process.env.NODE_ENV==="production" ? process.env.ROOT_URL : "http://localhost:3002/send2", 
       data: {
           titre: titre,
           nom: nom,

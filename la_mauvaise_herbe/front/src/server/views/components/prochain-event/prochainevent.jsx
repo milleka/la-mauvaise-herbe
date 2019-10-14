@@ -19,7 +19,7 @@ class prochainevent extends React.Component {
       <div className={styles.prochainevent}>
           <header>
           <div className={styles.head1}>
-            <h1>Mes prochain évènements</h1>
+            <h1>Mes prochains évènements</h1>
           </div>
           <Head/>
         </header>

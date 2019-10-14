@@ -39,6 +39,7 @@ class SectionReservation extends React.Component {
 
         };
       }
+      
 
       //ouverture modal
 
@@ -69,7 +70,7 @@ handleSubmit1(e){
   const email = this.state.email;
   axios({
       method: "POST", 
-      url:"http://localhost:3002/send1", 
+      url:process.env.NODE_ENV==="production" ? process.env.ROOT_URL : "http://localhost:3002/send1", 
       data: {
           place: place,
           event: event,

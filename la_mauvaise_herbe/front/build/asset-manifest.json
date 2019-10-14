@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.023aa2db.chunk.css",
+    "main.js": "/static/js/main.3406c2da.chunk.js",
+    "main.js.map": "/static/js/main.3406c2da.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.46aaee2e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.46aaee2e.js.map",
+    "static/js/2.9b8e4bc1.chunk.js": "/static/js/2.9b8e4bc1.chunk.js",
+    "static/js/2.9b8e4bc1.chunk.js.map": "/static/js/2.9b8e4bc1.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.3337fbdeb7c0552995448ad4c7de7e7c.js": "/precache-manifest.3337fbdeb7c0552995448ad4c7de7e7c.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.023aa2db.chunk.css.map": "/static/css/main.023aa2db.chunk.css.map",
+    "static/media/animations.jpg": "/static/media/animations.284305e2.jpg",
+    "static/media/pageAdminStyle.module.css": "/static/media/aquarellematt.83936f5c.jpg",
+    "static/media/lamauvaiseherbe.png": "/static/media/lamauvaiseherbe.6e5ec8b2.png",
+    "static/media/sporophytes.jpg": "/static/media/sporophytes.ca2d039f.jpg"
+  }
+}

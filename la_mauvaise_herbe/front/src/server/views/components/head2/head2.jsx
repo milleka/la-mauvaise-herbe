@@ -10,7 +10,7 @@ class head2 extends React.Component {
             <ul>
               <li><Link to={"/dashboard"}>Accueil</Link></li>
               <li><Link to={"/infogenerale"}>Mes infos générales</Link></li>
-              <li><Link to={"/prochainevent"}>Mes prochain évènements</Link></li>
+              <li><Link to={"/prochainevent"}>Mes prochains évènements</Link></li>
               <li><Link to={"/mesactivites"}>Mes activités</Link></li>
               <li><Link to={"/mesactu"}>Mes actualités</Link></li>
             </ul>
