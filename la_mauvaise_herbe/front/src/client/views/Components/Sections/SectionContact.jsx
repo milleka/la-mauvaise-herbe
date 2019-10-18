@@ -27,16 +27,20 @@ class Contact extends React.Component {
     const prenom = document.getElementById('prenom').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
+    console.log(process.env.NODE_ENV);
+    console.log(process.env.ROOT_URL);
     axios({
         method: "POST", 
-        url:process.env.NODE_ENV==="production" ? process.env.ROOT_URL : "http://localhost:3002/send", 
+        url:process.env.NODE_ENV==="production" ? "http://api-mauvaiseherbe.lescadev.fr/send" : "http://localhost:3002/send", 
         data: {
             nom: nom,
             prenom: prenom,   
             email: email,  
             message: message
         }
-    }).then((response)=>{
+    },
+      {'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'}).then((response)=>{
         if (response.data.msg === 'success'){
           this.resetForm()
             var node = document.createElement("p");                 
@@ -47,7 +51,7 @@ class Contact extends React.Component {
             alert("Message failed to send.")
         }
     })
-}
+  }
 
 resetForm(){
     document.getElementById('contact-form').reset();

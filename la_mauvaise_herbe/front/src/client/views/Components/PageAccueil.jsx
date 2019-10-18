@@ -81,9 +81,9 @@ componentDidMount= async () => {
               <GridItem>
                 <div className={classes.brand}>
                   <h1 className={classes.tit}>
-                      <div className={classes.titles}>La</div>
-                      <div className={classes.title}>Mauvaise</div>
-                      <div className={classes.titles}>Herbe</div>
+                      <span className={classes.titles}>La</span>
+                      <span className={classes.title}>Mauvaise</span>
+                      <span className={classes.titles}>Herbe</span>
                   </h1>
                 </div>
               </GridItem>
